@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homeland донат</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Homeland | Донат</h2>
+
+    <label for="server"><i class="fas fa-server"></i>Оберіть сервер:</label>
+    <select id="server">
+      <option value="srv1">Homeland Survival</option>
+      <!-- <option value="srv2">Onyx RolePlay</option> -->  
+    </select>
+
+    <label for="service"><i class="fas fa-gift"></i>Оберіть послугу:</label>
+    <select id="service">
+      <!-- Опції оновлюються скриптом -->
+    </select>
+
+    <label for="nickname"><i class="fas fa-user"></i>Введіть нікнейм:</label>
+    <input type="text" id="nickname" placeholder="Ваш нікнейм" required autofocus />
+
+    <button id="submitBtn" onclick="generateLink()" disabled>Купити</button>
+  </div>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
