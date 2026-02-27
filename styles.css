@@ -64,23 +64,6 @@ button {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Додати в кінець файлу styles.css */
-
-.warning-msg {
-  color: #ff5252; /* Приємний яскраво-червоний колір */
-  font-size: 0.85rem; /* Трохи менший шрифт, щоб виглядало акуратно */
-  font-weight: 600; /* Жирний шрифт для важливості */
-  margin-top: 0.5rem; /* Відступ від поля вводу */
-  margin-bottom: 1.5rem; /* Відступ до кнопки */
-  text-align: left; /* Вирівнювання по лівому краю */
-  line-height: 1.4; /* Міжрядковий інтервал для читабельності */
-  text-transform: uppercase; /* Робить текст капсом (опціонально, бо ви вже написали капсом) */
-}
-
-.warning-msg i {
-  margin-right: 6px; /* Відступ для іконки */
-  font-size: 1rem;
-}
 
 button:hover {
   background: linear-gradient(135deg, #45a049, #5aaa5a);
@@ -100,4 +83,20 @@ button:disabled {
   h2 {
     font-size: 1.5rem;
   }
+}
+
+.warning-msg {
+  color: #ff5252; /* Приємний яскраво-червоний колір */
+  font-size: 0.85rem; /* Трохи менший шрифт, щоб виглядало акуратно */
+  font-weight: 600; /* Жирний шрифт для важливості */
+  margin-top: 0.5rem; /* Відступ від поля вводу */
+  margin-bottom: 1.5rem; /* Відступ до кнопки */
+  text-align: left; /* Вирівнювання по лівому краю */
+  line-height: 1.4; /* Міжрядковий інтервал для читабельності */
+  text-transform: uppercase; /* Робить текст капсом (опціонально, бо ви вже написали капсом) */
+}
+
+.warning-msg i {
+  margin-right: 6px; /* Відступ для іконки */
+  font-size: 1rem;
 }
