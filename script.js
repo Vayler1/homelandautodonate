@@ -10,10 +10,6 @@ const services = {
     "Полковник (3 місяці)": 299,
     "Гетьман (Назавжди)": 750,
     "Гетьман (3 місяці)": 450
-  },
-  srv2: {
-    vip: 70,
-    ultra: 100
   }
 };
 
@@ -21,6 +17,17 @@ const serverSelect = document.getElementById("server");
 const serviceSelect = document.getElementById("service");
 const nicknameInput = document.getElementById("nickname");
 const submitBtn = document.getElementById("submitBtn");
+
+// --- ФУНКЦІЇ МОДАЛЬНОГО ВІКНА ---
+function closeModal() {
+  document.getElementById("country-modal").style.display = "none";
+}
+
+function redirectToGlobal() {
+  // Вкажи тут посилання на інший сайт для іноземців
+  window.location.href = "https://example.com/global-donate"; 
+}
+// -------------------------------
 
 function updateServiceOptions() {
   const selectedServer = serverSelect.value;
@@ -41,7 +48,7 @@ nicknameInput.addEventListener("input", () => {
   submitBtn.disabled = nicknameInput.value.trim() === "";
 });
 
-updateServiceOptions(); // Початкове завантаження послуг
+updateServiceOptions();
 
 function generateLink() {
   const server = serverSelect.value;
