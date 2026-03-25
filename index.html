@@ -15,34 +15,56 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- ВІКНО ВИБОРУ КРАЇНИ -->
+  <div id="country-modal" class="modal-overlay">
+    <div class="modal-content">
+      <img src="https://img.icons8.com/fluency/96/globe.png" alt="Globe" class="modal-icon">
+      <h2>Оберіть вашу країну</h2>
+      <p class="en-subtext">Select your country</p>
+      
+      <div class="modal-buttons">
+        <button class="country-btn ua-btn" onclick="closeModal()">
+          <span class="flag">🇺🇦</span>
+          <div class="btn-text">
+            <span class="main-lang">Україна</span>
+            <span class="sub-lang">Ukraine</span>
+          </div>
+        </button>
+
+        <button class="country-btn other-btn" onclick="redirectToGlobal()">
+          <span class="flag">🌍</span>
+          <div class="btn-text">
+            <span class="main-lang">Інші країни</span>
+            <span class="sub-lang">Other countries</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <h2>Homeland | Донат</h2>
 
     <label for="server"><i class="fas fa-server"></i>Оберіть сервер:</label>
     <select id="server">
       <option value="srv1">Homeland Survival</option>
-      <!-- <option value="srv2">Onyx RolePlay</option> -->  
     </select>
 
     <label for="service"><i class="fas fa-gift"></i>Оберіть послугу:</label>
-    <select id="service">
-      <!-- Опції оновлюються скриптом -->
-    </select>
+    <select id="service"></select>
 
     <label for="nickname"><i class="fas fa-user"></i>Введіть нікнейм:</label>
     <input type="text" id="nickname" placeholder="Ваш нікнейм" required autofocus />
 
-    <!-- НОВИЙ КОД ПОЧАТОК -->
     <p class="warning-msg">
       <i class="fas fa-exclamation-triangle"></i> 
       УВАГА! ЯКЩО ВИ ГРАЄТЕ З БЕДРОК МАЙНКРАФТУ НЕ ЗАБУДЬТЕ ВКАЗАТИ . (КРАПКУ) ПЕРЕД НІКОМ!
     </p>
-    <!-- НОВИЙ КОД КІНЕЦЬ -->
 
     <button id="submitBtn" onclick="generateLink()" disabled>Купити</button>
   </div>
 
-  <!-- Custom JS -->
   <script src="script.js"></script>
 </body>
 </html>
