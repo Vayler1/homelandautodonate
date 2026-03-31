@@ -25,7 +25,7 @@ function closeModal() {
 
 function redirectToGlobal() {
   // Вкажи тут посилання на інший сайт для іноземців
-  window.location.href = "https://example.com/global-donate"; 
+  window.location.href = "https://homeland-survival.tebex.io/"; 
 }
 // -------------------------------
 
