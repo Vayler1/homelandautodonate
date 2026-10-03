@@ -123,7 +123,7 @@ function t(key) {
 }
 
 function getDonatelloLang(lang) {
-  if (lang === 'uk') return 'uk';
+  if (lang === 'uk') return 'ua';
   if (lang === 'pl') return 'pl';
   return 'en'; // Всі інші мови (німецька, французька, іспанська, англійська) відкривають англійський donatello
 }
