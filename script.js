@@ -38,7 +38,6 @@ function closeModal() {
 }
 
 function redirectToGlobal() {
-  // Вкажи тут посилання на інший сайт для іноземців
   window.location.href = "https://homeland-survival.tebex.io/"; 
 }
 // -------------------------------
@@ -74,11 +73,17 @@ function generateLink() {
     return;
   }
 
-  const commentRaw = `${server}-${service}-${nickname}`;
-  const comment = encodeURIComponent(commentRaw);
   const amount = services[server][service];
-  const jarId = "8txe3r4Kxp";
 
-  const url = `https://send.monobank.ua/jar/${jarId}?a=${amount}&t=${comment}`;
+  // Якщо буде кілька серверів, краще передавати: `${server} | ${service}`
+  const message = service;
+
+  const params = new URLSearchParams({
+    a: amount,
+    c: nickname,
+    m: message
+  });
+
+  const url = `https://donatello.to/homelandsurvival?${params.toString()}`;
   window.location.href = url;
 }
