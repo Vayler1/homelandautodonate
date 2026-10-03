@@ -18,30 +18,38 @@
   <div class="bg-glow blob-1"></div>
   <div class="bg-glow blob-2"></div>
 
-  <!-- ВІКНО ВИБОРУ КРАЇНИ -->
-  <div id="country-modal" class="modal-overlay">
+  <!-- ВІКНО ВИБОРУ МОВИ -->
+  <div id="language-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="modal-icon-wrapper">
-          <i class="fas fa-earth-europe"></i>
-        </div>
-        <h2>Оберіть країну</h2>
-        <p class="en-subtext">Select your country</p>
+        <img src="https://img.icons8.com/fluency/96/language.png" alt="Language" class="modal-icon">
+        <h2>Оберіть мову</h2>
+        <p class="en-subtext">Select your language</p>
       </div>
       <div class="modal-buttons">
-        <button class="country-btn ua-btn" onclick="closeModal()">
-          <img src="https://flagcdn.com/w80/ua.png" alt="Ukraine" class="flag-img">
-          <div class="btn-text">
-            <span class="main-lang">Україна</span><span class="sub-lang">Ukraine</span>
-          </div>
-          <i class="fas fa-chevron-right arrow-icon"></i>
+        <button class="lang-btn" onclick="setLanguage('uk')">
+          <img src="https://flagcdn.com/w40/ua.png" class="flag-img" alt="UKR">
+          <span class="lang-name">Українська</span>
         </button>
-        <button class="country-btn other-btn" onclick="redirectToGlobal()">
-          <div class="flag-img global-icon"><i class="fas fa-globe"></i></div>
-          <div class="btn-text">
-            <span class="main-lang">Інші країни</span><span class="sub-lang">Other countries</span>
-          </div>
-          <i class="fas fa-chevron-right arrow-icon"></i>
+        <button class="lang-btn" onclick="setLanguage('en')">
+          <img src="https://flagcdn.com/w40/gb.png" class="flag-img" alt="ENG">
+          <span class="lang-name">English</span>
+        </button>
+        <button class="lang-btn" onclick="setLanguage('de')">
+          <img src="https://flagcdn.com/w40/de.png" class="flag-img" alt="DEU">
+          <span class="lang-name">Deutsch</span>
+        </button>
+        <button class="lang-btn" onclick="setLanguage('pl')">
+          <img src="https://flagcdn.com/w40/pl.png" class="flag-img" alt="POL">
+          <span class="lang-name">Polski</span>
+        </button>
+        <button class="lang-btn" onclick="setLanguage('fr')">
+          <img src="https://flagcdn.com/w40/fr.png" class="flag-img" alt="FRA">
+          <span class="lang-name">Français</span>
+        </button>
+        <button class="lang-btn" onclick="setLanguage('es')">
+          <img src="https://flagcdn.com/w40/es.png" class="flag-img" alt="ESP">
+          <span class="lang-name">Español</span>
         </button>
       </div>
     </div>
@@ -51,16 +59,16 @@
   <div class="store-container fade-in">
     <div class="header-titles">
       <h2 class="gradient-text">Homeland</h2>
-      <p class="motto-text">Твоя земля. Твоя історія.</p>
+      <p class="motto-text" id="mottoText">Твоя земля. Твоя історія.</p>
     </div>
 
     <!-- КРОК 1: Нікнейм -->
     <div class="step-section">
-      <div class="step-title"><span class="step-num">1</span> Введіть ваші дані</div>
+      <div class="step-title"><span class="step-num">1</span> <span id="step1Text">Введіть ваші дані</span></div>
       
       <div class="warning-box">
         <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
-        <div class="warning-text">
+        <div class="warning-text" id="warningText">
           <strong>Гравцям Bedrock!</strong> Не забудьте вказати <span>. (крапку)</span> перед ніком!
         </div>
       </div>
@@ -75,7 +83,7 @@
 
     <!-- КРОК 2: Вибір товару -->
     <div class="step-section">
-      <div class="step-title"><span class="step-num">2</span> Оберіть товар</div>
+      <div class="step-title"><span class="step-num">2</span> <span id="step2Text">Оберіть товар</span></div>
       
       <!-- Категорії (Вкладки) -->
       <div class="category-tabs" id="categoryTabs">
@@ -94,13 +102,13 @@
         Оберіть товар, щоб продовжити
       </div>
       <button id="submitBtn" onclick="generateLink()" disabled>
-        <span>Оплатити</span>
+        <span id="payText">Оплатити</span>
         <i class="fas fa-arrow-right"></i>
       </button>
     </div>
 
     <div class="disclaimer-box">
-      <p class="disclaimer-text">
+      <p class="disclaimer-text" id="disclaimerText">
         Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів. З кожної транзакції сплачуються податки до бюджету України 🇺🇦.
       </p>
     </div>
