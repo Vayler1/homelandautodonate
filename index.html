@@ -3,74 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homeland донат</title>
+  <title>Homeland | Донат</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+  <!-- Анімований фон -->
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
   <!-- ВІКНО ВИБОРУ КРАЇНИ -->
   <div id="country-modal" class="modal-overlay">
     <div class="modal-content">
-      <img src="https://img.icons8.com/fluency/96/globe.png" alt="Globe" class="modal-icon">
-      <h2>Оберіть вашу країну</h2>
-      <p class="en-subtext">Select your country</p>
-      
+      <div class="modal-header">
+        <img src="https://img.icons8.com/fluency/96/globe.png" alt="Globe" class="modal-icon">
+        <h2>Оберіть країну</h2>
+        <p class="en-subtext">Select your country</p>
+      </div>
       <div class="modal-buttons">
         <button class="country-btn ua-btn" onclick="closeModal()">
           <span class="flag">🇺🇦</span>
           <div class="btn-text">
-            <span class="main-lang">Україна</span>
-            <span class="sub-lang">Ukraine</span>
+            <span class="main-lang">Україна</span><span class="sub-lang">Ukraine</span>
           </div>
+          <i class="fas fa-chevron-right arrow-icon"></i>
         </button>
-
         <button class="country-btn other-btn" onclick="redirectToGlobal()">
           <span class="flag">🌍</span>
           <div class="btn-text">
-            <span class="main-lang">Інші країни</span>
-            <span class="sub-lang">Other countries</span>
+            <span class="main-lang">Інші країни</span><span class="sub-lang">Other countries</span>
           </div>
+          <i class="fas fa-chevron-right arrow-icon"></i>
         </button>
       </div>
     </div>
   </div>
 
-  <div class="container">
-    <h2>Homeland | Донат</h2>
-    <!-- ГАСЛО СЕРВЕРУ -->
-    <p class="motto-text">Homeland Survival — твоя земля. Твоя історія.</p>
+  <!-- ГОЛОВНА ФОРМА (МАГАЗИН) -->
+  <div class="store-container fade-in">
+    <div class="header-titles">
+      <h2 class="gradient-text">Homeland</h2>
+      <p class="motto-text">Твоя земля. Твоя історія.</p>
+    </div>
 
-    <label for="server"><i class="fas fa-server"></i>Оберіть сервер:</label>
-    <select id="server">
-      <option value="srv1">Homeland Survival</option>
-    </select>
+    <!-- КРОК 1: Нікнейм -->
+    <div class="step-section">
+      <div class="step-title"><span class="step-num">1</span> Введіть ваші дані</div>
+      
+      <div class="warning-box">
+        <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="warning-text">
+          <strong>Гравцям Bedrock!</strong> Не забудьте вказати <span>. (крапку)</span> перед ніком!
+        </div>
+      </div>
 
-    <label for="service"><i class="fas fa-gift"></i>Оберіть послугу:</label>
-    <select id="service"></select>
+      <div class="form-group">
+        <div class="input-wrapper">
+          <i class="fas fa-user"></i>
+          <input type="text" id="nickname" placeholder="Ваш нікнейм..." required />
+        </div>
+      </div>
+    </div>
 
-    <label for="nickname"><i class="fas fa-user"></i>Введіть нікнейм:</label>
-    <input type="text" id="nickname" placeholder="Ваш нікнейм" required autofocus />
+    <!-- КРОК 2: Вибір товару -->
+    <div class="step-section">
+      <div class="step-title"><span class="step-num">2</span> Оберіть товар</div>
+      
+      <!-- Категорії (Вкладки) -->
+      <div class="category-tabs" id="categoryTabs">
+        <!-- Генерується через JS -->
+      </div>
 
-    <p class="warning-msg">
-      <i class="fas fa-exclamation-triangle"></i> 
-      УВАГА! ЯКЩО ВИ ГРАЄТЕ З БЕДРОК МАЙНКРАФТУ НЕ ЗАБУДЬТЕ ВКАЗАТИ . (КРАПКУ) ПЕРЕД НІКОМ!
-    </p>
+      <!-- Сітка карток товарів -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Генерується через JS -->
+      </div>
+    </div>
 
-    <!-- ЗМІНЕНО ТЕКСТ КНОПКИ -->
-    <button id="submitBtn" onclick="generateLink()" disabled>Купити</button>
+    <!-- КРОК 3: Оплата -->
+    <div class="checkout-section">
+      <div class="selected-info" id="selectedInfo">
+        Оберіть товар, щоб продовжити
+      </div>
+      <button id="submitBtn" onclick="generateLink()" disabled>
+        <span>Оплатити</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
 
-    <!-- ОНОВЛЕНИЙ ОФІЦІЙНИЙ ДИСКЛЕЙМЕР -->
-    <p class="disclaimer-text">
-      Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів (ігрових привілеїв). Homeland Survival — це офіційний проєкт, який працює прозоро: з кожної транзакції сплачуються податки до бюджету України 🇺🇦. Відповідно до законодавства про цифровий контент, після миттєвої видачі товару на сервері кошти не підлягають поверненню чи обміну.
-    </p>
+    <div class="disclaimer-box">
+      <p class="disclaimer-text">
+        Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів. З кожної транзакції сплачуються податки до бюджету України 🇺🇦.
+      </p>
+    </div>
   </div>
 
   <script src="script.js"></script>
