@@ -371,7 +371,14 @@ input:focus + i, .input-wrapper:focus-within i {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 .modal-header { text-align: center; margin-bottom: 2rem; }
-.modal-icon { width: 70px; margin-bottom: 1rem; filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5)); }
+
+.modal-icon-wrapper { 
+  font-size: 4.5rem; 
+  color: var(--primary); 
+  margin-bottom: 1rem; 
+  filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.5)); 
+}
+
 .modal-header h2 { margin: 0 0 0.2rem 0; font-size: 1.5rem; }
 .en-subtext { color: var(--text-muted); margin: 0; font-size: 0.9rem; }
 .modal-buttons { display: flex; flex-direction: column; gap: 1rem; }
@@ -392,7 +399,27 @@ input:focus + i, .input-wrapper:focus-within i {
   background: rgba(16, 185, 129, 0.1);
   transform: translateY(-3px);
 }
-.flag { font-size: 2.2rem; margin-right: 1.2rem; }
+
+/* Прапори та іконки */
+.flag-img {
+  width: 40px;
+  height: 28px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+.global-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #3b82f6;
+  background: transparent;
+  box-shadow: none;
+  width: 40px;
+}
+
 .btn-text { display: flex; flex-direction: column; flex-grow: 1; }
 .main-lang { font-weight: 600; font-size: 1.1rem; }
 .sub-lang { font-size: 0.8rem; color: var(--text-muted); }
@@ -404,5 +431,5 @@ input:focus + i, .input-wrapper:focus-within i {
   .store-container { padding: 1.5rem; }
   .checkout-section { flex-direction: column; gap: 15px; text-align: center; }
   #submitBtn { width: 100%; justify-content: center; }
-  .products-grid { grid-template-columns: 1fr; } /* Одна колонка на телефоні */
+  .products-grid { grid-template-columns: 1fr; } 
 }
