@@ -276,6 +276,12 @@ input:focus + i, .input-wrapper:focus-within i {
   font-weight: 700;
   color: var(--primary);
 }
+.converted-price {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-left: 5px;
+}
 .check-icon {
   position: absolute;
   top: 10px;
@@ -366,70 +372,58 @@ input:focus + i, .input-wrapper:focus-within i {
   border: 1px solid var(--glass-border);
   padding: 2.5rem 2rem;
   border-radius: 24px;
-  max-width: 420px;
+  max-width: 450px;
   width: 100%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 .modal-header { text-align: center; margin-bottom: 2rem; }
-
-.modal-icon-wrapper { 
-  font-size: 4.5rem; 
-  color: var(--primary); 
-  margin-bottom: 1rem; 
-  filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.5)); 
-}
-
+.modal-icon { width: 70px; margin-bottom: 1rem; filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.5)); }
 .modal-header h2 { margin: 0 0 0.2rem 0; font-size: 1.5rem; }
 .en-subtext { color: var(--text-muted); margin: 0; font-size: 0.9rem; }
-.modal-buttons { display: flex; flex-direction: column; gap: 1rem; }
-.country-btn {
+
+/* Сітка для мов */
+.modal-buttons { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 15px; 
+}
+.lang-btn {
   display: flex;
   align-items: center;
-  padding: 1.2rem;
-  border-radius: 16px;
+  justify-content: flex-start;
+  padding: 1rem;
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(15, 15, 20, 0.8);
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-align: left;
 }
-.country-btn:hover {
+.lang-btn:hover {
   border-color: var(--primary);
   background: rgba(16, 185, 129, 0.1);
   transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.2);
 }
-
-/* Прапори та іконки */
 .flag-img {
-  width: 40px;
-  height: 28px;
+  width: 24px;
+  height: auto;
   border-radius: 4px;
-  object-fit: cover;
-  margin-right: 1.2rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  margin-right: 12px;
 }
-.global-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  color: #3b82f6;
-  background: transparent;
-  box-shadow: none;
-  width: 40px;
+.lang-btn .lang-name { 
+  font-weight: 600; 
+  font-size: 1rem; 
 }
-
-.btn-text { display: flex; flex-direction: column; flex-grow: 1; }
-.main-lang { font-weight: 600; font-size: 1.1rem; }
-.sub-lang { font-size: 0.8rem; color: var(--text-muted); }
-.arrow-icon { color: var(--text-muted); font-size: 1.2rem; transition: 0.3s; }
-.country-btn:hover .arrow-icon { color: var(--primary); transform: translateX(5px); }
 
 /* --- АДАПТИВНІСТЬ ДЛЯ МОБІЛОК --- */
 @media (max-width: 600px) {
   .store-container { padding: 1.5rem; }
   .checkout-section { flex-direction: column; gap: 15px; text-align: center; }
   #submitBtn { width: 100%; justify-content: center; }
-  .products-grid { grid-template-columns: 1fr; } 
+  .products-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .modal-buttons { grid-template-columns: 1fr; }
 }
