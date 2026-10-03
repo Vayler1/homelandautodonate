@@ -22,20 +22,22 @@
   <div id="country-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <img src="https://img.icons8.com/fluency/96/globe.png" alt="Globe" class="modal-icon">
+        <div class="modal-icon-wrapper">
+          <i class="fas fa-earth-europe"></i>
+        </div>
         <h2>Оберіть країну</h2>
         <p class="en-subtext">Select your country</p>
       </div>
       <div class="modal-buttons">
         <button class="country-btn ua-btn" onclick="closeModal()">
-          <span class="flag">🇺🇦</span>
+          <img src="https://flagcdn.com/w80/ua.png" alt="Ukraine" class="flag-img">
           <div class="btn-text">
             <span class="main-lang">Україна</span><span class="sub-lang">Ukraine</span>
           </div>
           <i class="fas fa-chevron-right arrow-icon"></i>
         </button>
         <button class="country-btn other-btn" onclick="redirectToGlobal()">
-          <span class="flag">🌍</span>
+          <div class="flag-img global-icon"><i class="fas fa-globe"></i></div>
           <div class="btn-text">
             <span class="main-lang">Інші країни</span><span class="sub-lang">Other countries</span>
           </div>
