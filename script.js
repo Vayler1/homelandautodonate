@@ -4,16 +4,16 @@ const storeData = [
     name: "Привілеї",
     icon: "fa-crown",
     items: [
-      { name: "Козак (Назавжди)", shortName: "Козак", desc: "Назавжди", price: 115 },
-      { name: "Козак (3 місяці)", shortName: "Козак", desc: "3 місяці", price: 69 },
-      { name: "Сотник (Назавжди)", shortName: "Сотник", desc: "Назавжди", price: 199 },
-      { name: "Сотник (3 місяці)", shortName: "Сотник", desc: "3 місяці", price: 139 },
-      { name: "Полковник (Назавжди)", shortName: "Полковник", desc: "Назавжди", price: 459 },
-      { name: "Полковник (3 місяці)", shortName: "Полковник", desc: "3 місяці", price: 349 },
-      { name: "Гетьман (Назавжди)", shortName: "Гетьман", desc: "Назавжди", price: 859 },
-      { name: "Гетьман (3 місяці)", shortName: "Гетьман", desc: "3 місяці", price: 519 },
-      { name: "Спонсор (Назавжди)", shortName: "Спонсор", desc: "Назавжди", price: 1719 },
-      { name: "Спонсор (3 місяці)", shortName: "Спонсор", desc: "3 місяці", price: 1149 }
+      { name: "Козак (Назавжди)", shortName: "Козак", tag: "forever", desc: "Назавжди", icon: "fa-shield-halved", price: 115 },
+      { name: "Козак (3 місяці)", shortName: "Козак", tag: "period", desc: "Термін: 3 місяці", icon: "fa-shield-halved", price: 69 },
+      { name: "Сотник (Назавжди)", shortName: "Сотник", tag: "forever", desc: "Назавжди", icon: "fa-khanda", price: 199 },
+      { name: "Сотник (3 місяці)", shortName: "Сотник", tag: "period", desc: "Термін: 3 місяці", icon: "fa-khanda", price: 139 },
+      { name: "Полковник (Назавжди)", shortName: "Полковник", tag: "forever", desc: "Назавжди", icon: "fa-award", price: 459 },
+      { name: "Полковник (3 місяці)", shortName: "Полковник", tag: "period", desc: "Термін: 3 місяці", icon: "fa-award", price: 349 },
+      { name: "Гетьман (Назавжди)", shortName: "Гетьман", tag: "forever", desc: "Назавжди", icon: "fa-crown", price: 859 },
+      { name: "Гетьман (3 місяці)", shortName: "Гетьман", tag: "period", desc: "Термін: 3 місяці", icon: "fa-crown", price: 519 },
+      { name: "Спонсор (Назавжди)", shortName: "Спонсор", tag: "forever", desc: "Назавжди", icon: "fa-gem", price: 1719 },
+      { name: "Спонсор (3 місяці)", shortName: "Спонсор", tag: "period", desc: "Термін: 3 місяці", icon: "fa-gem", price: 1149 }
     ]
   },
   {
@@ -21,11 +21,11 @@ const storeData = [
     name: "Кейси",
     icon: "fa-box-open",
     items: [
-      { name: "Донат кейс", shortName: "Донат кейс", desc: "Випадковий донат", price: 169 },
-      { name: "Косметичний кейс (1 шт.)", shortName: "Косметичний кейс", desc: "1 шт.", price: 45 },
-      { name: "Косметичний кейс (5 шт.)", shortName: "Косметичний кейс", desc: "5 шт.", price: 209 },
-      { name: "Косметичний кейс (10 шт.)", shortName: "Косметичний кейс", desc: "10 шт.", price: 369 },
-      { name: "Косметичний кейс (20 шт.)", shortName: "Косметичний кейс", desc: "20 шт.", price: 689 }
+      { name: "Донат кейс", shortName: "Донат кейс", tag: "forever", desc: "Випадковий донат-ранг", icon: "fa-cube", price: 169 },
+      { name: "Косметичний кейс (1 шт.)", shortName: "Косметичний кейс", tag: "period", desc: "1 штука", icon: "fa-wand-magic-sparkles", price: 45 },
+      { name: "Косметичний кейс (5 шт.)", shortName: "Косметичний кейс", tag: "period", desc: "Вигідний пак: 5 шт.", icon: "fa-wand-magic-sparkles", price: 209 },
+      { name: "Косметичний кейс (10 шт.)", shortName: "Косметичний кейс", tag: "period", desc: "Великий пак: 10 шт.", icon: "fa-wand-magic-sparkles", price: 369 },
+      { name: "Косметичний кейс (20 шт.)", shortName: "Косметичний кейс", tag: "period", desc: "Максимальний: 20 шт.", icon: "fa-wand-magic-sparkles", price: 689 }
     ]
   },
   {
@@ -33,10 +33,10 @@ const storeData = [
     name: "Валюта",
     icon: "fa-coins",
     items: [
-      { name: "Кейс з ігровою валютою (1 шт.)", shortName: "Кейс валюти", desc: "1 шт.", price: 149 },
-      { name: "Кейс з ігровою валютою (5 шт.)", shortName: "Кейс валюти", desc: "5 шт.", price: 669 },
-      { name: "Кейс з ігровою валютою (10 шт.)", shortName: "Кейс валюти", desc: "10 шт.", price: 1179 },
-      { name: "Кейс з ігровою валютою (20 шт.)", shortName: "Кейс валюти", desc: "20 шт.", price: 2219 }
+      { name: "Кейс з ігровою валютою (1 шт.)", shortName: "Кейс валюти", tag: "period", desc: "1 штука", icon: "fa-coins", price: 149 },
+      { name: "Кейс з ігровою валютою (5 шт.)", shortName: "Кейс валюти", tag: "period", desc: "5 штук", icon: "fa-coins", price: 669 },
+      { name: "Кейс з ігровою валютою (10 шт.)", shortName: "Кейс валюти", tag: "period", desc: "10 штук", icon: "fa-coins", price: 1179 },
+      { name: "Кейс з ігровою валютою (20 шт.)", shortName: "Кейс валюти", tag: "period", desc: "20 штук", icon: "fa-coins", price: 2219 }
     ]
   },
   {
@@ -44,7 +44,7 @@ const storeData = [
     name: "Інше",
     icon: "fa-star",
     items: [
-      { name: "Преміум Батлпас (1 сезон)", shortName: "Преміум Батлпас", desc: "1 сезон", price: 89 }
+      { name: "Преміум Батлпас (1 сезон)", shortName: "Преміум Батлпас", tag: "forever", desc: "Доступ на весь 1 сезон", icon: "fa-star", price: 89 }
     ]
   }
 ];
@@ -53,70 +53,81 @@ const storeData = [
 const translations = {
   uk: {
     backBtn: "На головну",
-    motto: "Твоя земля. Твоя історія.", step1: "Введіть ваші дані", step2: "Оберіть товар",
-    warning: "<strong>Гравцям Bedrock!</strong> Не забудьте вказати <span>. (крапку)</span> перед ніком!",
-    placeholder: "Ваш ігровий нікнейм...", emptyCart: "Оберіть товар, щоб продовжити", selected: "Обрано:", payBtn: "Оплатити", loading: "Створення...",
-    disclaimer: "Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів. Кошти за придбані товари поверненню не підлягають. З кожної транзакції сплачуються податки до бюджету України 🇺🇦."
+    motto: "Твоя земля. Твоя історія.", 
+    step1: "Введіть ваш нікнейм", 
+    step2: "Оберіть товар",
+    warning: "<i class='fa-solid fa-circle-exclamation'></i> <span>Гравцям <strong>Bedrock</strong> обов'язково ставити <code>.</code> (крапку) перед ніком!</span>",
+    placeholder: "Ваш нікнейм...",
+    emptyHint: "Оберіть будь-який товар зліва для оплати",
+    payBtn: "Оплатити", 
+    loading: "Створення посилання...",
+    disclaimer: "Здійснюючи оплату, ви погоджуєтесь з правилами сервера. Усі покупки є добровільним внеском на розвиток проекту.",
+    orderSummary: "Ваше замовлення",
+    forPlayer: "Отримувач:",
+    foreverTag: "НАЗАВЖДИ",
+    periodTag: "ТИМЧАСОВО"
   },
   en: {
     backBtn: "Main site",
-    motto: "Your land. Your story.", step1: "Enter your details", step2: "Select product",
-    warning: "<strong>Bedrock players!</strong> Do not forget to put a <span>. (dot)</span> before your nickname!",
-    placeholder: "Your nickname...", emptyCart: "Select a product to continue", selected: "Selected:", payBtn: "Pay", loading: "Creating...",
-    disclaimer: "By making a payment, you agree to the terms of purchasing digital goods. All purchases are non-refundable. Taxes from every transaction are paid to the budget of Ukraine 🇺🇦.",
+    motto: "Your land. Your story.", 
+    step1: "Enter your nickname", 
+    step2: "Select product",
+    warning: "<i class='fa-solid fa-circle-exclamation'></i> <span><strong>Bedrock</strong> players must put a <code>.</code> (dot) before their nickname!</span>",
+    placeholder: "Your nickname...",
+    emptyHint: "Select any product on the left to proceed",
+    payBtn: "Proceed to Pay", 
+    loading: "Generating link...",
+    disclaimer: "By paying, you agree to the server rules. All purchases are considered voluntary donations.",
+    orderSummary: "Order Summary",
+    forPlayer: "Recipient:",
+    foreverTag: "LIFETIME",
+    periodTag: "LIMITED",
     "Привілеї": "Ranks", "Кейси": "Cases", "Валюта": "Currency", "Інше": "Other",
     "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Sponsor",
-    "Назавжди": "Forever", "3 місяці": "3 months", "Донат кейс": "Donate Case", "Випадковий донат": "Random donate",
-    "Косметичний кейс": "Cosmetic Case", "1 шт.": "1 pc.", "5 шт.": "5 pcs.", "10 шт.": "10 pcs.", "20 шт.": "20 pcs.",
-    "Кейс валюти": "Currency Case", "Преміум Батлпас": "Premium Battlepass", "1 сезон": "1 season"
+    "Назавжди": "Lifetime", "Термін: 3 місяці": "3 Months access", "Донат кейс": "Donate Case", 
+    "Випадковий донат-ранг": "Random donate rank", "Косметичний кейс": "Cosmetic Case", 
+    "1 штука": "1 pc.", "Вигідний пак: 5 шт.": "Bundle: 5 pcs.", "Великий пак: 10 шт.": "Large: 10 pcs.", "Максимальний: 20 шт.": "Mega: 20 pcs.",
+    "Кейс валюти": "Currency Case", "5 штук": "5 pcs.", "10 штук": "10 pcs.", "20 штук": "20 pcs.",
+    "Преміум Батлпас": "Premium Battlepass", "Доступ на весь 1 сезон": "Full 1st Season access"
   },
   de: {
     backBtn: "Zur Website",
-    motto: "Dein Land. Deine Geschichte.", step1: "Gib deine Daten ein", step2: "Produkt wählen",
-    warning: "<strong>Bedrock-Spieler!</strong> Vergiss nicht, einen <span>. (Punkt)</span> vor dem Nicknamen zu setzen!",
-    placeholder: "Dein Nickname...", emptyCart: "Wähle ein Produkt aus, um fortzufahren", selected: "Ausgewählt:", payBtn: "Bezahlen", loading: "Erstellen...",
-    disclaimer: "Mit der Zahlung stimmst du den Bedingungen für den Kauf digitaler Güter zu. Alle Einkäufe sind nicht erstattungsfähig. Steuern aus jeder Transaktion fließen in den Haushalt der Ukraine 🇺🇦.",
+    motto: "Dein Land. Deine Geschichte.", 
+    step1: "Gib deinen Nicknamen ein", 
+    step2: "Produkt wählen",
+    warning: "<i class='fa-solid fa-circle-exclamation'></i> <span><strong>Bedrock</strong>-Spieler müssen einen <code>.</code> (Punkt) voranstellen!</span>",
+    placeholder: "Dein Nickname...",
+    emptyHint: "Wähle links ein Produkt aus, um fortzufahren",
+    payBtn: "Bezahlen", 
+    loading: "Link wird erstellt...",
+    disclaimer: "Mit der Zahlung stimmst du den Serverregeln zu. Käufe sind freiwillige Spenden.",
+    orderSummary: "Bestellübersicht",
+    forPlayer: "Empfänger:",
+    foreverTag: "DAUERHAFT",
+    periodTag: "ZEITLICH",
     "Привілеї": "Ränge", "Кейси": "Kisten", "Валюта": "Währung", "Інше": "Sonstiges",
     "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Sponsor",
-    "Назавжди": "Für immer", "3 місяці": "3 Monate", "Донат кейс": "Donate Kiste", "Випадковий донат": "Zufälliger Donate",
-    "Косметичний кейс": "Kosmetische Kiste", "1 шт.": "1 Stk.", "5 шт.": "5 Stk.", "10 шт.": "10 Stk.", "20 шт.": "20 Stk.",
-    "Кейс валюти": "Währungskiste", "Преміум Батлпас": "Premium Battlepass", "1 сезон": "1 Saison"
+    "Назавжди": "Dauerhaft", "Термін: 3 місяці": "3 Monate Zugriff", "Донат кейс": "Donate Kiste", 
+    "Випадковий донат-ранг": "Zufälliger Donate-Rang", "Косметичний кейс": "Kosmetische Kiste",
+    "Кейс валюти": "Währungskiste", "Преміум Батлпас": "Premium Battlepass"
   },
   pl: {
     backBtn: "Na stronę główną",
-    motto: "Twoja ziemia. Twoja historia.", step1: "Wpisz swoje dane", step2: "Wybierz produkt",
-    warning: "<strong>Gracze Bedrock!</strong> Nie zapomnijcie dodać <span>. (kropki)</span> przed nickiem!",
-    placeholder: "Twój nick...", emptyCart: "Wybierz produkt, aby kontynuować", selected: "Wybrano:", payBtn: "Zapłać", loading: "Tworzenie...",
-    disclaimer: "Dokonując płatności, akceptujesz warunki zakupu dóbr cyfrowych. Zakupione towary nie podlegają zwrotowi. Podatki z każdej transakcji trafiają do budżetu Ukrainy 🇺🇦.",
+    motto: "Twoja ziemia. Twoja historia.", 
+    step1: "Wpisz swój nick", 
+    step2: "Wybierz produkt",
+    warning: "<i class='fa-solid fa-circle-exclamation'></i> <span>Gracze <strong>Bedrock</strong> muszą dodać <code>.</code> (kropkę) przed nickiem!</span>",
+    placeholder: "Twój nick...",
+    emptyHint: "Wybierz produkt z lewej strony, aby kontynuować",
+    payBtn: "Zapłać", 
+    loading: "Generowanie linku...",
+    disclaimer: "Dokonując płatności, akceptujesz regulamin serwera. Zakupy są dobrowolnym wsparciem.",
+    orderSummary: "Podsumowanie",
+    forPlayer: "Odbiorca:",
+    foreverTag: "NA ZAWSZE",
+    periodTag: "OKRESOWO",
     "Привілеї": "Rangi", "Кейси": "Skrzynie", "Валюта": "Waluta", "Інше": "Inne",
-    "Козак": "Kozak", "Сотник": "Setnik", "Полковник": "Pułkownik", "Гетьман": "Hetman", "Спонсор": "Sponsor",
-    "Назавжди": "Na zawsze", "3 місяці": "3 miesiące", "Донат кейс": "Donate Skrzynia", "Випадковий донат": "Losowy donate",
-    "Косметичний кейс": "Skrzynia Kosmetyczna", "1 шт.": "1 szt.", "5 шт.": "5 szt.", "10 шт.": "10 szt.", "20 шт.": "20 szt.",
-    "Кейс валюти": "Skrzynia Waluty", "Преміум Батлпас": "Karnet Bojowy", "1 сезон": "1 sezon"
-  },
-  fr: {
-    backBtn: "Site principal",
-    motto: "Votre terre. Votre histoire.", step1: "Entrez vos détails", step2: "Sélectionnez le produit",
-    warning: "<strong>Joueurs Bedrock!</strong> N'oubliez pas de mettre un <span>. (point)</span> avant votre pseudo !",
-    placeholder: "Votre pseudo...", emptyCart: "Sélectionnez un produit pour continuer", selected: "Sélectionné:", payBtn: "Payer", loading: "Création...",
-    disclaimer: "En effectuant un paiement, vous acceptez les conditions d'achat de biens numériques. Tous les achats sont non remboursables. Les taxes de chaque transaction vont au budget de l'Ukraine 🇺🇦.",
-    "Привілеї": "Grades", "Кейси": "Caisses", "Валюта": "Monnaie", "Інше": "Autre",
-    "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Sponsor",
-    "Назавжди": "Pour toujours", "3 місяці": "3 mois", "Донат кейс": "Caisse Donate", "Випадковий донат": "Don aléatoire",
-    "Косметичний кейс": "Caisse Cosmétique", "1 шт.": "1 pc.", "5 шт.": "5 pcs.", "10 шт.": "10 pcs.", "20 шт.": "20 pcs.",
-    "Кейс валюти": "Caisse de Monnaie", "Преміум Батлпас": "Battlepass Premium", "1 сезон": "1 saison"
-  },
-  es: {
-    backBtn: "Sitio principal",
-    motto: "Tu tierra. Tu historia.", step1: "Ingresa tus datos", step2: "Seleccionar producto",
-    warning: "<strong>¡Jugadores de Bedrock!</strong> ¡No olviden poner un <span>. (punto)</span> antes del apodo!",
-    placeholder: "Tu apodo...", emptyCart: "Seleccione un producto para continuar", selected: "Seleccionado:", payBtn: "Pagar", loading: "Creando...",
-    disclaimer: "Al realizar un pago, aceptas los términos de compra de bienes digitales. Todas las compras no son reembolsables. Los impuestos de cada transacción van al presupuesto de Ucrania 🇺🇦.",
-    "Привілеї": "Rangos", "Кейси": "Cajas", "Валюта": "Moneda", "Інше": "Otro",
-    "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Patrocinador",
-    "Назавжди": "Para siempre", "3 місяці": "3 meses", "Донат кейс": "Caja Donate", "Випадковий донат": "Donación aleatoria",
-    "Косметичний кейс": "Caja Cosmética", "1 шт.": "1 ud.", "5 шт.": "5 uds.", "10 шт.": "10 uds.", "20 шт.": "20 uds.",
-    "Кейс валюти": "Caja de Moneda", "Преміум Батлпас": "Pase de Batalla", "1 сезон": "1 temporada"
+    "Козак": "Kozak", "Сотник": "Setnik", "Полковник": "Pułkownik", "Гетьман": "Hetman", "Спонсор": "Sponsor"
   }
 };
 
@@ -132,7 +143,7 @@ function getDonatelloLang(lang) {
   return 'en';
 }
 
-// Курси валют
+// Курси валют з НБУ
 let exchangeRates = {
   en: { symbol: '$', rate: 45.00 },
   de: { symbol: '€', rate: 50.55 },
@@ -145,23 +156,18 @@ async function fetchRealRates() {
   try {
     const res = await fetch("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
     const data = await res.json();
-    
-    const usd = data.find(c => c.cc === 'USD').rate;
-    const eur = data.find(c => c.cc === 'EUR').rate;
-    const pln = data.find(c => c.cc === 'PLN').rate;
-
-    exchangeRates.en.rate = usd;
-    exchangeRates.de.rate = eur;
-    exchangeRates.fr.rate = eur;
-    exchangeRates.es.rate = eur;
-    exchangeRates.pl.rate = pln;
+    exchangeRates.en.rate = data.find(c => c.cc === 'USD').rate;
+    exchangeRates.de.rate = data.find(c => c.cc === 'EUR').rate;
+    exchangeRates.fr.rate = data.find(c => c.cc === 'EUR').rate;
+    exchangeRates.es.rate = data.find(c => c.cc === 'EUR').rate;
+    exchangeRates.pl.rate = data.find(c => c.cc === 'PLN').rate;
     
     if (currentLang !== 'uk') {
       renderProducts(currentCategory);
-      updateCheckoutState();
+      updateCheckoutSidebar();
     }
-  } catch (error) {
-    console.error("Не вдалося завантажити курси НБУ, використовуються резервні.");
+  } catch (e) {
+    console.log("Використовуються базові курси валют");
   }
 }
 
@@ -172,7 +178,8 @@ const tabsContainer = document.getElementById("categoryTabs");
 const gridContainer = document.getElementById("productsGrid");
 const nicknameInput = document.getElementById("nickname");
 const submitBtn = document.getElementById("submitBtn");
-const selectedInfo = document.getElementById("selectedInfo");
+const orderContent = document.getElementById("orderContent");
+const totalPriceVal = document.getElementById("totalPriceVal");
 const modal = document.getElementById("language-modal");
 const currentLangLabel = document.getElementById("currentLangLabel");
 
@@ -191,20 +198,15 @@ function updateStaticTexts() {
   document.getElementById("payText").innerText = t("payBtn");
   document.getElementById("disclaimerText").innerText = t("disclaimer");
   document.getElementById("backToSiteText").innerText = t("backBtn");
+  document.getElementById("orderSummaryTitle").innerText = t("orderSummary");
   currentLangLabel.innerText = currentLang.toUpperCase();
-  updateCheckoutState();
+  updateCheckoutSidebar();
 }
 
-function openLanguageModal() {
-  modal.style.display = "flex";
-  setTimeout(() => { modal.style.opacity = '1'; }, 10);
-}
-
+function openLanguageModal() { modal.classList.add("open"); }
 function setLanguage(lang) {
   currentLang = lang;
-  modal.style.opacity = '0';
-  modal.style.transition = 'opacity 0.3s ease';
-  setTimeout(() => { modal.style.display = "none"; }, 300);
+  modal.classList.remove("open");
   initStore();
 }
 
@@ -212,7 +214,7 @@ function renderTabs() {
   tabsContainer.innerHTML = "";
   storeData.forEach(category => {
     const btn = document.createElement("button");
-    btn.className = `tab-btn ${category.id === currentCategory ? "active" : ""}`;
+    btn.className = `category-tab-btn ${category.id === currentCategory ? "active" : ""}`;
     btn.innerHTML = `<i class="fas ${category.icon}"></i> ${t(category.name)}`;
     btn.onclick = () => {
       currentCategory = category.id;
@@ -223,14 +225,12 @@ function renderTabs() {
   });
 }
 
-function getPriceDisplay(price) {
-  let display = `${price} ₴`;
+function getConvertedPrice(price) {
   if (currentLang !== 'uk' && exchangeRates[currentLang]) {
     const { symbol, rate } = exchangeRates[currentLang];
-    const converted = (price / rate).toFixed(2);
-    display += ` <span class="converted-price">(~${converted} ${symbol})</span>`;
+    return `(~${(price / rate).toFixed(2)} ${symbol})`;
   }
-  return display;
+  return '';
 }
 
 function renderProducts(categoryId) {
@@ -238,47 +238,71 @@ function renderProducts(categoryId) {
   const category = storeData.find(c => c.id === categoryId);
   
   category.items.forEach(item => {
-    const card = document.createElement("div");
     const isSelected = selectedProduct && selectedProduct.name === item.name;
-    card.className = `product-card ${isSelected ? "selected" : ""}`;
+    const card = document.createElement("div");
+    card.className = `item-card ${isSelected ? "selected" : ""}`;
     
+    const tagClass = item.tag === 'forever' ? 'tag-forever' : 'tag-period';
+    const tagText = item.tag === 'forever' ? t("foreverTag") : t("periodTag");
+
     card.innerHTML = `
-      <i class="fas fa-circle-check check-icon"></i>
-      <div>
-        <div class="product-name">${t(item.shortName)}</div>
-        <div class="product-duration">${t(item.desc)}</div>
+      <div class="item-card-top">
+        <div class="item-icon-box"><i class="fa-solid ${item.icon}"></i></div>
+        <span class="item-tag ${tagClass}">${tagText}</span>
       </div>
-      <div class="product-price">${getPriceDisplay(item.price)}</div>
+      <div>
+        <div class="item-title">${t(item.shortName)}</div>
+        <div class="item-desc">${t(item.desc)}</div>
+      </div>
+      <div class="item-bottom">
+        <div class="item-price">${item.price} ₴</div>
+        <div class="item-converted">${getConvertedPrice(item.price)}</div>
+      </div>
     `;
 
-    card.onclick = () => selectProduct(item, card);
+    card.onclick = () => {
+      selectedProduct = item;
+      document.querySelectorAll(".item-card").forEach(c => c.classList.remove("selected"));
+      card.classList.add("selected");
+      updateCheckoutSidebar();
+    };
+
     gridContainer.appendChild(card);
   });
 }
 
-function selectProduct(item, cardElement) {
-  selectedProduct = item;
-  document.querySelectorAll(".product-card").forEach(c => c.classList.remove("selected"));
-  cardElement.classList.add("selected");
-  updateCheckoutState();
-}
-
-function updateCheckoutState() {
+function updateCheckoutSidebar() {
   const nick = nicknameInput.value.trim();
-  
+
   if (selectedProduct) {
-    selectedInfo.innerHTML = `
-      ${t("selected")} <strong>${t(selectedProduct.shortName)}</strong> 
-      <span class="final-price">${getPriceDisplay(selectedProduct.price)}</span>
+    totalPriceVal.innerText = `${selectedProduct.price} ₴`;
+    
+    orderContent.innerHTML = `
+      <div class="order-selected-box">
+        <div class="order-row">
+          <span class="order-item-name">${t(selectedProduct.shortName)}</span>
+          <span style="color: var(--primary); font-weight:700;">${selectedProduct.price} ₴</span>
+        </div>
+        <div class="order-row">
+          <span class="order-target-nick">${t("forPlayer")} <strong>${nick || "—"}</strong></span>
+          <span class="order-converted">${getConvertedPrice(selectedProduct.price)}</span>
+        </div>
+      </div>
     `;
   } else {
-    selectedInfo.innerHTML = t("emptyCart");
+    totalPriceVal.innerText = "0 ₴";
+    orderContent.innerHTML = `
+      <div class="order-empty">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span>${t("emptyHint")}</span>
+      </div>
+    `;
   }
 
   submitBtn.disabled = !(nick.length > 0 && selectedProduct !== null);
 }
 
-nicknameInput.addEventListener("input", updateCheckoutState);
+nicknameInput.addEventListener("input", updateCheckoutSidebar);
 
 function generateLink() {
   const nickname = nicknameInput.value.trim();
@@ -294,10 +318,8 @@ function generateLink() {
     lang: getDonatelloLang(currentLang) 
   });
 
-  const url = `https://donatello.to/homelandsurvival?${params.toString()}`;
-  
   setTimeout(() => {
-    window.location.href = url;
+    window.location.href = `https://donatello.to/homelandsurvival?${params.toString()}`;
   }, 400);
 }
 
