@@ -352,7 +352,7 @@ function renderTabs() {
   });
 }
 
-// Форматування ціни у валюті відповідно до мовних стандартів
+// Форматування валют згідно з міжнародними стандартами
 function getConvertedPrice(price) {
   if (currentLang !== 'uk' && exchangeRates[currentLang]) {
     const { symbol, rate } = exchangeRates[currentLang];
@@ -459,6 +459,6 @@ function generateLink() {
   }, 400);
 }
 
-// Запуск при відкритті
+// Запуск при завантаженні сторінки
 initStore();
 fetchRealRates();
