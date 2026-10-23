@@ -90,7 +90,7 @@
         <div class="hero-left">
           <img src="logo.png" alt="Homeland Logo" class="hero-logo" onerror="this.style.display='none'">
           <div>
-            <div class="brand-badge"><i class="fa-solid fa-shield-halved"></i> Офіційна каса сервера</div>
+            <div class="brand-badge"><i class="fa-solid fa-shield-halved"></i> <span id="heroBadgeText">Офіційна каса сервера</span></div>
             <h1 class="gradient-text">Homeland Store</h1>
             <p class="motto-text" id="mottoText">Твоя земля. Твоя історія.</p>
           </div>
@@ -98,7 +98,7 @@
         <div class="hero-right">
           <div class="stat-pill">
             <span class="live-dot"></span>
-            <span>Автоматична видача до <strong>60 сек</strong></span>
+            <span id="heroStatText">Автоматична видача до <strong>60 сек</strong></span>
           </div>
         </div>
       </div>
@@ -109,7 +109,7 @@
           <div class="step-num">1</div>
           <div>
             <h3 class="panel-title" id="step1Text">Введіть ваш нікнейм</h3>
-            <p class="panel-desc">Товар буде нараховано саме на цей нік у грі</p>
+            <p class="panel-desc" id="step1DescText">Товар буде нараховано саме на цей нік у грі</p>
           </div>
         </div>
 
@@ -132,7 +132,7 @@
           <div class="step-num">2</div>
           <div>
             <h3 class="panel-title" id="step2Text">Оберіть товар</h3>
-            <p class="panel-desc">Оберіть привілей або кейс з каталогу</p>
+            <p class="panel-desc" id="step2DescText">Оберіть привілей або кейс з каталогу</p>
           </div>
         </div>
 
@@ -154,7 +154,6 @@
         </div>
 
         <div class="order-content" id="orderContent">
-          <!-- Генерується через JS -->
           <div class="order-empty">
             <i class="fa-solid fa-basket-shopping"></i>
             <span id="emptyHint">Оберіть будь-який товар зліва для оплати</span>
@@ -164,8 +163,10 @@
         <div class="checkout-divider"></div>
 
         <div class="price-summary">
-          <span class="price-label">До сплати:</span>
-          <span class="price-val" id="totalPriceVal">0 ₴</span>
+          <span class="price-label" id="totalPriceLabel">До сплати:</span>
+          <div class="price-val-container">
+            <span class="price-val" id="totalPriceVal">0 ₴</span>
+          </div>
         </div>
 
         <button id="submitBtn" onclick="generateLink()" disabled>
@@ -175,12 +176,12 @@
 
         <div class="guarantees">
           <div class="guarantee-item">
-            <i class="fa-solid fa-shield-check"></i>
-            <span>Безпечна офіційна оплата через <strong>Donatello</strong></span>
+            <i class="fa-solid fa-shield"></i>
+            <span id="guarantee1Text">Безпечна офіційна оплата через <strong>Donatello</strong></span>
           </div>
           <div class="guarantee-item">
             <i class="fa-solid fa-bolt"></i>
-            <span>Миттєва автоматична видача на сервері</span>
+            <span id="guarantee2Text">Миттєва автоматична видача на сервері</span>
           </div>
         </div>
 
