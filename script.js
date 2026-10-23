@@ -50,18 +50,25 @@ const storeData = [
   }
 ];
 
-// --- СИСТЕМА ПЕРЕКЛАДІВ ---
+// --- ПОВНА СИСТЕМА ПЕРЕКЛАДІВ ---
 const translations = {
   uk: {
     backBtn: "На головну",
+    heroBadge: "Офіційна каса сервера",
+    heroStat: "Автоматична видача до <strong>60 сек</strong>",
     motto: "Твоя земля. Твоя історія.",
     step1: "Введіть ваш нікнейм",
+    step1Desc: "Товар буде нараховано саме на цей нік у грі",
     step2: "Оберіть товар",
+    step2Desc: "Оберіть привілей або кейс з каталогу",
     warning: "<i class='fa-solid fa-circle-exclamation'></i> <span>Гравцям <strong>Bedrock</strong> обов'язково ставити <code>.</code> (крапку) перед ніком!</span>",
     placeholder: "Ваш нікнейм...",
     emptyHint: "Оберіть будь-який товар зліва для оплати",
+    totalLabel: "До сплати:",
     payBtn: "Оплатити",
     loading: "Створення посилання...",
+    guarantee1: "Безпечна офіційна оплата через <strong>Donatello</strong>",
+    guarantee2: "Миттєва автоматична видача на сервері",
     disclaimer: "Здійснюючи оплату, ви погоджуєтесь з правилами сервера. Усі покупки є добровільним внеском на розвиток проекту.",
     orderSummary: "Ваше замовлення",
     forPlayer: "Отримувач:",
@@ -70,14 +77,21 @@ const translations = {
   },
   en: {
     backBtn: "Main site",
+    heroBadge: "Official Server Store",
+    heroStat: "Instant delivery in <strong>60 sec</strong>",
     motto: "Your land. Your story.",
     step1: "Enter your nickname",
+    step1Desc: "Items will be credited to this in-game nickname",
     step2: "Select product",
+    step2Desc: "Choose a rank, case or currency pack",
     warning: "<i class='fa-solid fa-circle-exclamation'></i> <span><strong>Bedrock</strong> players must put a <code>.</code> (dot) before their nickname!</span>",
     placeholder: "Your nickname...",
     emptyHint: "Select any product on the left to proceed",
+    totalLabel: "Total:",
     payBtn: "Proceed to Pay",
     loading: "Generating link...",
+    guarantee1: "Secure official payment via <strong>Donatello</strong>",
+    guarantee2: "Instant automatic delivery in-game",
     disclaimer: "By paying, you agree to the server rules. All purchases are considered voluntary donations.",
     orderSummary: "Order Summary",
     forPlayer: "Recipient:",
@@ -93,14 +107,21 @@ const translations = {
   },
   de: {
     backBtn: "Zur Website",
+    heroBadge: "Offizieller Server-Shop",
+    heroStat: "Automatische Lieferung bis <strong>60 Sek.</strong>",
     motto: "Dein Land. Deine Geschichte.",
     step1: "Gib deinen Nicknamen ein",
+    step1Desc: "Artikel werden diesem Spielernamen gutgeschrieben",
     step2: "Produkt wählen",
+    step2Desc: "Wähle einen Rang, eine Kiste oder Währung",
     warning: "<i class='fa-solid fa-circle-exclamation'></i> <span><strong>Bedrock</strong>-Spieler müssen einen <code>.</code> (Punkt) voranstellen!</span>",
     placeholder: "Dein Nickname...",
     emptyHint: "Wähle links ein Produkt aus, um fortzufahren",
+    totalLabel: "Zu zahlen:",
     payBtn: "Bezahlen",
     loading: "Link wird erstellt...",
+    guarantee1: "Sichere offizielle Zahlung über <strong>Donatello</strong>",
+    guarantee2: "Sofortige automatische Ausgabe auf dem Server",
     disclaimer: "Mit der Zahlung stimmst du den Serverregeln zu. Käufe sind freiwillige Spenden.",
     orderSummary: "Bestellübersicht",
     forPlayer: "Empfänger:",
@@ -116,14 +137,21 @@ const translations = {
   },
   pl: {
     backBtn: "Na stronę główną",
+    heroBadge: "Oficjalny sklep serwera",
+    heroStat: "Automatyczne doręczenie do <strong>60 sek.</strong>",
     motto: "Twoja ziemia. Twoja historia.",
     step1: "Wpisz swój nick",
+    step1Desc: "Przedmiot zostanie przypisany do tego nicku w grze",
     step2: "Wybierz produkt",
+    step2Desc: "Wybierz rangę, skrzynię lub pakiet waluty",
     warning: "<i class='fa-solid fa-circle-exclamation'></i> <span>Gracze <strong>Bedrock</strong> muszą dodać <code>.</code> (kropkę) przed nickiem!</span>",
     placeholder: "Twój nick...",
     emptyHint: "Wybierz produkt z lewej strony, aby kontynuować",
+    totalLabel: "Do zapłaty:",
     payBtn: "Zapłać",
     loading: "Generowanie linku...",
+    guarantee1: "Bezpieczna oficjalna płatność przez <strong>Donatello</strong>",
+    guarantee2: "Błyskawiczne automatyczne wydanie na serwerze",
     disclaimer: "Dokonując płatności, akceptujesz regulamin serwera. Zakupy są dobrowolnym wsparciem.",
     orderSummary: "Podsumowanie",
     forPlayer: "Odbiorca:",
@@ -139,14 +167,21 @@ const translations = {
   },
   fr: {
     backBtn: "Site principal",
+    heroBadge: "Boutique officielle du serveur",
+    heroStat: "Livraison automatique en <strong>60 sec</strong>",
     motto: "Votre terre. Votre histoire.",
     step1: "Entrez votre pseudo",
+    step1Desc: "L'article sera crédité sur ce pseudo en jeu",
     step2: "Sélectionnez le produit",
+    step2Desc: "Choisissez un grade, une caisse ou de la monnaie",
     warning: "<i class='fa-solid fa-circle-exclamation'></i> <span>Les joueurs <strong>Bedrock</strong> doivent mettre un <code>.</code> (point) avant leur pseudo !</span>",
     placeholder: "Votre pseudo...",
     emptyHint: "Sélectionnez un produit à gauche pour payer",
+    totalLabel: "À payer :",
     payBtn: "Payer",
     loading: "Génération du lien...",
+    guarantee1: "Paiement officiel sécurisé via <strong>Donatello</strong>",
+    guarantee2: "Attribution automatique instantanée sur le serveur",
     disclaimer: "En effectuant un paiement, vous acceptez les règles du serveur. Tous les achats sont des dons volontaires.",
     orderSummary: "Récapitulatif",
     forPlayer: "Destinataire :",
@@ -162,14 +197,21 @@ const translations = {
   },
   es: {
     backBtn: "Sitio principal",
+    heroBadge: "Tienda oficial del servidor",
+    heroStat: "Entrega automática en <strong>60 seg</strong>",
     motto: "Tu tierra. Tu historia.",
     step1: "Ingresa tu apodo",
+    step1Desc: "El artículo se enviará a este apodo en el juego",
     step2: "Selecciona el producto",
+    step2Desc: "Elige un rango, caja o paquete de monedas",
     warning: "<i class='fa-solid fa-circle-exclamation'></i> <span>¡Jugadores de <strong>Bedrock</strong> deben poner un <code>.</code> (punto) antes del apodo!</span>",
     placeholder: "Tu apodo...",
     emptyHint: "Elige cualquier producto a la izquierda para pagar",
+    totalLabel: "Total a pagar:",
     payBtn: "Pagar",
     loading: "Generando enlace...",
+    guarantee1: "Pago oficial seguro a través de <strong>Donatello</strong>",
+    guarantee2: "Entrega automática instantánea en el servidor",
     disclaimer: "Al realizar el pago, aceptas las reglas del servidor. Todas las compras son donaciones voluntarias.",
     orderSummary: "Resumen del pedido",
     forPlayer: "Destinatario:",
@@ -199,11 +241,11 @@ function getDonatelloLang(lang) {
 
 // Курси валют
 let exchangeRates = {
-  en: { symbol: '$', rate: 45.00 },
-  de: { symbol: '€', rate: 50.55 },
-  fr: { symbol: '€', rate: 50.55 },
-  es: { symbol: '€', rate: 50.55 },
-  pl: { symbol: 'zł', rate: 11.59 }
+  en: { symbol: '$', rate: 41.80 },
+  de: { symbol: '€', rate: 45.20 },
+  fr: { symbol: '€', rate: 45.20 },
+  es: { symbol: '€', rate: 45.20 },
+  pl: { symbol: 'zł', rate: 10.50 }
 };
 
 async function fetchRealRates() {
@@ -251,15 +293,30 @@ function initStore() {
 }
 
 function updateStaticTexts() {
+  // Банер
+  document.getElementById("heroBadgeText").innerText = t("heroBadge");
+  document.getElementById("heroStatText").innerHTML = t("heroStat");
   document.getElementById("mottoText").innerText = t("motto");
+
+  // Крок 1
   document.getElementById("step1Text").innerText = t("step1");
+  document.getElementById("step1DescText").innerText = t("step1Desc");
   document.getElementById("warningText").innerHTML = t("warning");
   document.getElementById("nickname").placeholder = t("placeholder");
+
+  // Крок 2
   document.getElementById("step2Text").innerText = t("step2");
-  document.getElementById("payText").innerText = t("payBtn");
-  document.getElementById("disclaimerText").innerText = t("disclaimer");
+  document.getElementById("step2DescText").innerText = t("step2Desc");
+
+  // Шапка та чекаут
   document.getElementById("backToSiteText").innerText = t("backBtn");
   document.getElementById("orderSummaryTitle").innerText = t("orderSummary");
+  document.getElementById("totalPriceLabel").innerText = t("totalLabel");
+  document.getElementById("payText").innerText = t("payBtn");
+  document.getElementById("guarantee1Text").innerHTML = t("guarantee1");
+  document.getElementById("guarantee2Text").innerText = t("guarantee2");
+  document.getElementById("disclaimerText").innerText = t("disclaimer");
+
   currentLangLabel.innerText = currentLang.toUpperCase();
   updateCheckoutSidebar();
 }
@@ -274,7 +331,6 @@ function setLanguage(lang) {
   initStore();
 }
 
-// Закриття модалки при кліку на затемнений фон
 if (modal) {
   modal.addEventListener("click", (e) => {
     if (e.target === modal) modal.classList.remove("open");
@@ -296,10 +352,15 @@ function renderTabs() {
   });
 }
 
+// Форматування ціни у валюті відповідно до мовних стандартів
 function getConvertedPrice(price) {
   if (currentLang !== 'uk' && exchangeRates[currentLang]) {
     const { symbol, rate } = exchangeRates[currentLang];
-    return `(~${(price / rate).toFixed(2)} ${symbol})`;
+    const converted = (price / rate).toFixed(2);
+    if (symbol === '$') return `(~$${converted})`;
+    if (symbol === '€') return `(~${converted} €)`;
+    if (symbol === 'zł') return `(~${converted} zł)`;
+    return `(~${converted} ${symbol})`;
   }
   return '';
 }
@@ -347,7 +408,8 @@ function updateCheckoutSidebar() {
   const nick = nicknameInput.value.trim();
 
   if (selectedProduct) {
-    totalPriceVal.innerText = `${selectedProduct.price} ₴`;
+    const converted = getConvertedPrice(selectedProduct.price);
+    totalPriceVal.innerHTML = `${selectedProduct.price} ₴ ${converted ? `<small class="total-converted">${converted}</small>` : ''}`;
     
     orderContent.innerHTML = `
       <div class="order-selected-box">
@@ -357,7 +419,7 @@ function updateCheckoutSidebar() {
         </div>
         <div class="order-row">
           <span class="order-target-nick">${t("forPlayer")} <strong>${nick || "—"}</strong></span>
-          <span class="order-converted">${getConvertedPrice(selectedProduct.price)}</span>
+          <span class="order-converted">${converted}</span>
         </div>
       </div>
     `;
@@ -397,6 +459,6 @@ function generateLink() {
   }, 400);
 }
 
-// Запуск при завантаженні сторінки
+// Запуск при відкритті
 initStore();
 fetchRealRates();
