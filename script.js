@@ -4,16 +4,16 @@ const storeData = [
     name: "Привілеї",
     icon: "fa-crown",
     items: [
-      { name: "Козак (Назавжди)", shortName: "Козак", desc: "Назавжди", price: 100 },
-      { name: "Козак (3 місяці)", shortName: "Козак", desc: "3 місяці", price: 60 },
-      { name: "Сотник (Назавжди)", shortName: "Сотник", desc: "Назавжди", price: 170 },
-      { name: "Сотник (3 місяці)", shortName: "Сотник", desc: "3 місяці", price: 120 },
-      { name: "Полковник (Назавжди)", shortName: "Полковник", desc: "Назавжди", price: 399 },
-      { name: "Полковник (3 місяці)", shortName: "Полковник", desc: "3 місяці", price: 299 },
-      { name: "Гетьман (Назавжди)", shortName: "Гетьман", desc: "Назавжди", price: 750 },
-      { name: "Гетьман (3 місяці)", shortName: "Гетьман", desc: "3 місяці", price: 450 },
-      { name: "Спонсор (Назавжди)", shortName: "Спонсор", desc: "Назавжди", price: 1499 },
-      { name: "Спонсор (3 місяці)", shortName: "Спонсор", desc: "3 місяці", price: 999 }
+      { name: "Козак (Назавжди)", shortName: "Козак", desc: "Назавжди", price: 115 },
+      { name: "Козак (3 місяці)", shortName: "Козак", desc: "3 місяці", price: 69 },
+      { name: "Сотник (Назавжди)", shortName: "Сотник", desc: "Назавжди", price: 199 },
+      { name: "Сотник (3 місяці)", shortName: "Сотник", desc: "3 місяці", price: 139 },
+      { name: "Полковник (Назавжди)", shortName: "Полковник", desc: "Назавжди", price: 459 },
+      { name: "Полковник (3 місяці)", shortName: "Полковник", desc: "3 місяці", price: 349 },
+      { name: "Гетьман (Назавжди)", shortName: "Гетьман", desc: "Назавжди", price: 859 },
+      { name: "Гетьман (3 місяці)", shortName: "Гетьман", desc: "3 місяці", price: 519 },
+      { name: "Спонсор (Назавжди)", shortName: "Спонсор", desc: "Назавжди", price: 1719 },
+      { name: "Спонсор (3 місяці)", shortName: "Спонсор", desc: "3 місяці", price: 1149 }
     ]
   },
   {
@@ -21,11 +21,11 @@ const storeData = [
     name: "Кейси",
     icon: "fa-box-open",
     items: [
-      { name: "Донат кейс", shortName: "Донат кейс", desc: "Випадковий донат", price: 150 },
-      { name: "Косметичний кейс (1 шт.)", shortName: "Косметичний кейс", desc: "1 шт.", price: 40 },
-      { name: "Косметичний кейс (5 шт.)", shortName: "Косметичний кейс", desc: "5 шт.", price: 180 },
-      { name: "Косметичний кейс (10 шт.)", shortName: "Косметичний кейс", desc: "10 шт.", price: 320 },
-      { name: "Косметичний кейс (20 шт.)", shortName: "Косметичний кейс", desc: "20 шт.", price: 600 }
+      { name: "Донат кейс", shortName: "Донат кейс", desc: "Випадковий донат", price: 169 },
+      { name: "Косметичний кейс (1 шт.)", shortName: "Косметичний кейс", desc: "1 шт.", price: 45 },
+      { name: "Косметичний кейс (5 шт.)", shortName: "Косметичний кейс", desc: "5 шт.", price: 209 },
+      { name: "Косметичний кейс (10 шт.)", shortName: "Косметичний кейс", desc: "10 шт.", price: 369 },
+      { name: "Косметичний кейс (20 шт.)", shortName: "Косметичний кейс", desc: "20 шт.", price: 689 }
     ]
   },
   {
@@ -33,10 +33,10 @@ const storeData = [
     name: "Валюта",
     icon: "fa-coins",
     items: [
-      { name: "Кейс з ігровою валютою (1 шт.)", shortName: "Кейс валюти", desc: "1 шт.", price: 129 },
-      { name: "Кейс з ігровою валютою (5 шт.)", shortName: "Кейс валюти", desc: "5 шт.", price: 580 },
-      { name: "Кейс з ігровою валютою (10 шт.)", shortName: "Кейс валюти", desc: "10 шт.", price: 1030 },
-      { name: "Кейс з ігровою валютою (20 шт.)", shortName: "Кейс валюти", desc: "20 шт.", price: 1935 }
+      { name: "Кейс з ігровою валютою (1 шт.)", shortName: "Кейс валюти", desc: "1 шт.", price: 149 },
+      { name: "Кейс з ігровою валютою (5 шт.)", shortName: "Кейс валюти", desc: "5 шт.", price: 669 },
+      { name: "Кейс з ігровою валютою (10 шт.)", shortName: "Кейс валюти", desc: "10 шт.", price: 1179 },
+      { name: "Кейс з ігровою валютою (20 шт.)", shortName: "Кейс валюти", desc: "20 шт.", price: 2219 }
     ]
   },
   {
@@ -44,7 +44,7 @@ const storeData = [
     name: "Інше",
     icon: "fa-star",
     items: [
-      { name: "Преміум Батлпас (1 сезон)", shortName: "Преміум Батлпас", desc: "1 сезон", price: 75 }
+      { name: "Преміум Батлпас (1 сезон)", shortName: "Преміум Батлпас", desc: "1 сезон", price: 89 }
     ]
   }
 ];
