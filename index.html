@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homeland | Донат</title>
+  <title>Homeland | Донат-магазин</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="logo.png">
-  
 </head>
 <body>
 
@@ -20,7 +21,7 @@
   <div class="bg-glow blob-1"></div>
   <div class="bg-glow blob-2"></div>
 
-  <!-- ВІКНО ВИБОРУ МОВИ -->
+  <!-- ВІКНО ВИБОРУ МОВИ (ПРИ СТАРТІ АБО ЗА КЛІКОМ) -->
   <div id="language-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
@@ -29,27 +30,27 @@
         <p class="en-subtext">Select your language</p>
       </div>
       <div class="modal-buttons">
-        <button class="lang-btn" onclick="setLanguage('uk')">
+        <button class="lang-modal-btn" onclick="setLanguage('uk')">
           <img src="https://flagcdn.com/w40/ua.png" class="flag-img" alt="UKR">
           <span class="lang-name">Українська</span>
         </button>
-        <button class="lang-btn" onclick="setLanguage('en')">
+        <button class="lang-modal-btn" onclick="setLanguage('en')">
           <img src="https://flagcdn.com/w40/gb.png" class="flag-img" alt="ENG">
           <span class="lang-name">English</span>
         </button>
-        <button class="lang-btn" onclick="setLanguage('de')">
+        <button class="lang-modal-btn" onclick="setLanguage('de')">
           <img src="https://flagcdn.com/w40/de.png" class="flag-img" alt="DEU">
           <span class="lang-name">Deutsch</span>
         </button>
-        <button class="lang-btn" onclick="setLanguage('pl')">
+        <button class="lang-modal-btn" onclick="setLanguage('pl')">
           <img src="https://flagcdn.com/w40/pl.png" class="flag-img" alt="POL">
           <span class="lang-name">Polski</span>
         </button>
-        <button class="lang-btn" onclick="setLanguage('fr')">
+        <button class="lang-modal-btn" onclick="setLanguage('fr')">
           <img src="https://flagcdn.com/w40/fr.png" class="flag-img" alt="FRA">
           <span class="lang-name">Français</span>
         </button>
-        <button class="lang-btn" onclick="setLanguage('es')">
+        <button class="lang-modal-btn" onclick="setLanguage('es')">
           <img src="https://flagcdn.com/w40/es.png" class="flag-img" alt="ESP">
           <span class="lang-name">Español</span>
         </button>
@@ -57,65 +58,100 @@
     </div>
   </div>
 
+  <!-- ШАПКА З ПЕРЕХОДОМ НА САЙТ ТА ПЕРЕМИКАЧЕМ МОВИ -->
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <a href="https://homeland.pp.ua/" class="nav-logo">
+        <img src="logo.png" alt="Homeland Logo" onerror="this.style.display='none'">
+        <span>HOMELAND</span>
+      </a>
+
+      <div class="top-nav-actions">
+        <!-- Кнопка зміни мови -->
+        <button class="btn-subtle" onclick="openLanguageModal()" title="Змінити мову / Change language">
+          <i class="fa-solid fa-globe"></i>
+          <span id="currentLangLabel">UA</span>
+        </button>
+
+        <!-- Кнопка повернення на сайт -->
+        <a href="https://homeland.pp.ua/" class="btn-back">
+          <i class="fa-solid fa-house"></i>
+          <span id="backToSiteText">На головну</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
   <!-- ГОЛОВНА ФОРМА (МАГАЗИН) -->
-  <div class="store-container fade-in">
-    <div class="header-titles">
-      <h2 class="gradient-text">Homeland</h2>
-      <p class="motto-text" id="mottoText">Твоя земля. Твоя історія.</p>
-    </div>
-
-    <!-- КРОК 1: Нікнейм -->
-    <div class="step-section">
-      <div class="step-title"><span class="step-num">1</span> <span id="step1Text">Введіть ваші дані</span></div>
-
-      <div class="warning-box">
-        <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
-        <div class="warning-text" id="warningText">
-          <strong>Гравцям Bedrock!</strong> Не забудьте вказати <span>. (крапку)</span> перед ніком!
+  <main class="page-wrapper">
+    <div class="store-container fade-in">
+      <div class="header-titles">
+        <a href="https://homeland.pp.ua/" class="store-logo-link" title="Перейти на сайт">
+          <img src="logo.png" alt="Homeland" class="header-brand-logo" onerror="this.style.display='none'">
+        </a>
+        <h1 class="gradient-text">Homeland</h1>
+        <p class="motto-text" id="mottoText">Твоя земля. Твоя історія.</p>
+        
+        <div class="version-tag">
+          <i class="fa-solid fa-cube"></i> Minecraft 1.16.5 — 1.21.x
         </div>
       </div>
 
-      <div class="form-group">
-        <div class="input-wrapper">
-          <i class="fas fa-user"></i>
-          <input type="text" id="nickname" placeholder="Ваш нікнейм..." required />
+      <!-- КРОК 1: Нікнейм -->
+      <div class="step-section">
+        <div class="step-title">
+          <span class="step-num">1</span>
+          <span id="step1Text">Введіть ваші дані</span>
+        </div>
+
+        <div class="warning-box">
+          <div class="warning-icon"><i class="fas fa-triangle-exclamation"></i></div>
+          <div class="warning-text" id="warningText">
+            <strong>Гравцям Bedrock!</strong> Не забудьте вказати <span>. (крапку)</span> перед ніком!
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-wrapper">
+            <i class="fas fa-user"></i>
+            <input type="text" id="nickname" placeholder="Ваш ігровий нікнейм..." required autocomplete="off" />
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- КРОК 2: Вибір товару -->
-    <div class="step-section">
-      <div class="step-title"><span class="step-num">2</span> <span id="step2Text">Оберіть товар</span></div>
+      <!-- КРОК 2: Вибір товару -->
+      <div class="step-section">
+        <div class="step-title">
+          <span class="step-num">2</span>
+          <span id="step2Text">Оберіть товар</span>
+        </div>
 
-      <!-- Категорії (Вкладки) -->
-      <div class="category-tabs" id="categoryTabs">
-        <!-- Генерується через JS -->
+        <!-- Категорії (Вкладки) -->
+        <div class="category-tabs" id="categoryTabs"></div>
+
+        <!-- Сітка карток товарів -->
+        <div class="products-grid" id="productsGrid"></div>
       </div>
 
-      <!-- Сітка карток товарів -->
-      <div class="products-grid" id="productsGrid">
-        <!-- Генерується через JS -->
+      <!-- КРОК 3: Оплата -->
+      <div class="checkout-section">
+        <div class="selected-info" id="selectedInfo">
+          Оберіть товар, щоб продовжити
+        </div>
+        <button id="submitBtn" onclick="generateLink()" disabled>
+          <span id="payText">Оплатити</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- ДИСКЛЕЙМЕР -->
+      <div class="disclaimer-box">
+        <p class="disclaimer-text" id="disclaimerText">
+          Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів. Кошти за придбані товари поверненню не підлягають. З кожної транзакції сплачуються податки до бюджету України 🇺🇦.
+        </p>
       </div>
     </div>
-
-    <!-- КРОК 3: Оплата -->
-    <div class="checkout-section">
-      <div class="selected-info" id="selectedInfo">
-        Оберіть товар, щоб продовжити
-      </div>
-      <button id="submitBtn" onclick="generateLink()" disabled>
-        <span id="payText">Оплатити</span>
-        <i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
-
-    <div class="disclaimer-box">
-      <p class="disclaimer-text" id="disclaimerText">
-        Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів. З кожної транзакції сплачуються податки до бюджету України 🇺🇦.
-        Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів. Кошти за придбані товари поверненню не підлягають. З кожної транзакції сплачуються податки до бюджету України 🇺🇦.
-      </p>
-    </div>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
