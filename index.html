@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homeland | Донат-магазин</title>
+  <title>Homeland | Офіційний Донат-магазин</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,140 +17,179 @@
 </head>
 <body>
 
-  <!-- Анімований фон -->
+  <!-- Анімовані сяючі плями -->
   <div class="bg-glow blob-1"></div>
   <div class="bg-glow blob-2"></div>
 
-  <!-- ВІКНО ВИБОРУ МОВИ (ПРИ СТАРТІ АБО ЗА КЛІКОМ) -->
+  <!-- МОДАЛКА ВИБОРУ МОВИ -->
   <div id="language-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <img src="https://img.icons8.com/fluency/96/language.png" alt="Language" class="modal-icon">
+        <i class="fa-solid fa-earth-europe modal-globe"></i>
         <h2>Оберіть мову</h2>
         <p class="en-subtext">Select your language</p>
       </div>
       <div class="modal-buttons">
         <button class="lang-modal-btn" onclick="setLanguage('uk')">
-          <img src="https://flagcdn.com/w40/ua.png" class="flag-img" alt="UKR">
-          <span class="lang-name">Українська</span>
+          <img src="https://flagcdn.com/w40/ua.png" class="flag-img" alt="UA">
+          <span>Українська</span>
         </button>
         <button class="lang-modal-btn" onclick="setLanguage('en')">
-          <img src="https://flagcdn.com/w40/gb.png" class="flag-img" alt="ENG">
-          <span class="lang-name">English</span>
+          <img src="https://flagcdn.com/w40/gb.png" class="flag-img" alt="EN">
+          <span>English</span>
         </button>
         <button class="lang-modal-btn" onclick="setLanguage('de')">
-          <img src="https://flagcdn.com/w40/de.png" class="flag-img" alt="DEU">
-          <span class="lang-name">Deutsch</span>
+          <img src="https://flagcdn.com/w40/de.png" class="flag-img" alt="DE">
+          <span>Deutsch</span>
         </button>
         <button class="lang-modal-btn" onclick="setLanguage('pl')">
-          <img src="https://flagcdn.com/w40/pl.png" class="flag-img" alt="POL">
-          <span class="lang-name">Polski</span>
+          <img src="https://flagcdn.com/w40/pl.png" class="flag-img" alt="PL">
+          <span>Polski</span>
         </button>
         <button class="lang-modal-btn" onclick="setLanguage('fr')">
-          <img src="https://flagcdn.com/w40/fr.png" class="flag-img" alt="FRA">
-          <span class="lang-name">Français</span>
+          <img src="https://flagcdn.com/w40/fr.png" class="flag-img" alt="FR">
+          <span>Français</span>
         </button>
         <button class="lang-modal-btn" onclick="setLanguage('es')">
-          <img src="https://flagcdn.com/w40/es.png" class="flag-img" alt="ESP">
-          <span class="lang-name">Español</span>
+          <img src="https://flagcdn.com/w40/es.png" class="flag-img" alt="ES">
+          <span>Español</span>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- ШАПКА З ПЕРЕХОДОМ НА САЙТ ТА ПЕРЕМИКАЧЕМ МОВИ -->
+  <!-- ШАПКА В СТИЛІ HOMELAND.PP.UA -->
   <header class="top-nav">
     <div class="top-nav-inner">
       <a href="https://homeland.pp.ua/" class="nav-logo">
-        <img src="logo.png" alt="Homeland Logo" onerror="this.style.display='none'">
+        <img src="logo.png" alt="Homeland" onerror="this.style.display='none'">
         <span>HOMELAND</span>
       </a>
 
       <div class="top-nav-actions">
-        <!-- Кнопка зміни мови -->
-        <button class="btn-subtle" onclick="openLanguageModal()" title="Змінити мову / Change language">
+        <button class="nav-btn-subtle" onclick="openLanguageModal()">
           <i class="fa-solid fa-globe"></i>
-          <span id="currentLangLabel">UA</span>
+          <span id="currentLangLabel">UK</span>
         </button>
-
-        <!-- Кнопка повернення на сайт -->
-        <a href="https://homeland.pp.ua/" class="btn-back">
-          <i class="fa-solid fa-house"></i>
+        <a href="https://homeland.pp.ua/" class="nav-btn-home">
+          <i class="fa-solid fa-arrow-left"></i>
           <span id="backToSiteText">На головну</span>
         </a>
       </div>
     </div>
   </header>
 
-  <!-- ГОЛОВНА ФОРМА (МАГАЗИН) -->
-  <main class="page-wrapper">
-    <div class="store-container fade-in">
-      <div class="header-titles">
-        <a href="https://homeland.pp.ua/" class="store-logo-link" title="Перейти на сайт">
-          <img src="logo.png" alt="Homeland" class="header-brand-logo" onerror="this.style.display='none'">
-        </a>
-        <h1 class="gradient-text">Homeland</h1>
-        <p class="motto-text" id="mottoText">Твоя земля. Твоя історія.</p>
-        
-        <div class="version-tag">
-          <i class="fa-solid fa-cube"></i> Minecraft 1.16.5 — 1.21.x
+  <!-- ГОЛОВНИЙ ДВОКОЛОНКОВИЙ КОНТЕЙНЕР -->
+  <main class="store-layout">
+    
+    <!-- ЛІВА КОЛОНКА (КАТАЛОГ І ВВІД ДАНИХ) -->
+    <div class="store-main">
+      
+      <!-- Привітальний банер з лого -->
+      <div class="brand-hero">
+        <div class="hero-left">
+          <img src="logo.png" alt="Homeland Logo" class="hero-logo" onerror="this.style.display='none'">
+          <div>
+            <div class="brand-badge"><i class="fa-solid fa-shield-halved"></i> Офіційна каса сервера</div>
+            <h1 class="gradient-text">Homeland Store</h1>
+            <p class="motto-text" id="mottoText">Твоя земля. Твоя історія.</p>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="stat-pill">
+            <span class="live-dot"></span>
+            <span>Автоматична видача до <strong>60 сек</strong></span>
+          </div>
         </div>
       </div>
 
       <!-- КРОК 1: Нікнейм -->
-      <div class="step-section">
-        <div class="step-title">
-          <span class="step-num">1</span>
-          <span id="step1Text">Введіть ваші дані</span>
-        </div>
-
-        <div class="warning-box">
-          <div class="warning-icon"><i class="fas fa-triangle-exclamation"></i></div>
-          <div class="warning-text" id="warningText">
-            <strong>Гравцям Bedrock!</strong> Не забудьте вказати <span>. (крапку)</span> перед ніком!
+      <div class="panel-card">
+        <div class="panel-header">
+          <div class="step-num">1</div>
+          <div>
+            <h3 class="panel-title" id="step1Text">Введіть ваш нікнейм</h3>
+            <p class="panel-desc">Товар буде нараховано саме на цей нік у грі</p>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="input-row">
           <div class="input-wrapper">
-            <i class="fas fa-user"></i>
-            <input type="text" id="nickname" placeholder="Ваш ігровий нікнейм..." required autocomplete="off" />
+            <i class="fas fa-user-astronaut"></i>
+            <input type="text" id="nickname" placeholder="Ваш нікнейм..." autocomplete="off" />
           </div>
+        </div>
+
+        <div class="bedrock-hint" id="warningText">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span>Гравцям <strong>Bedrock</strong> обов'язково ставити <code>.</code> (крапку) перед ніком!</span>
         </div>
       </div>
 
       <!-- КРОК 2: Вибір товару -->
-      <div class="step-section">
-        <div class="step-title">
-          <span class="step-num">2</span>
-          <span id="step2Text">Оберіть товар</span>
+      <div class="panel-card">
+        <div class="panel-header">
+          <div class="step-num">2</div>
+          <div>
+            <h3 class="panel-title" id="step2Text">Оберіть товар</h3>
+            <p class="panel-desc">Оберіть привілей або кейс з каталогу</p>
+          </div>
         </div>
 
-        <!-- Категорії (Вкладки) -->
+        <!-- Категорії -->
         <div class="category-tabs" id="categoryTabs"></div>
 
         <!-- Сітка карток товарів -->
         <div class="products-grid" id="productsGrid"></div>
       </div>
 
-      <!-- КРОК 3: Оплата -->
-      <div class="checkout-section">
-        <div class="selected-info" id="selectedInfo">
-          Оберіть товар, щоб продовжити
+    </div>
+
+    <!-- ПРАВА КОЛОНКА (STICKY ЧЕКАУТ) -->
+    <aside class="store-sidebar">
+      <div class="checkout-card">
+        <div class="checkout-header">
+          <i class="fa-solid fa-receipt"></i>
+          <h3 id="orderSummaryTitle">Ваше замовлення</h3>
         </div>
+
+        <div class="order-content" id="orderContent">
+          <!-- Генерується через JS -->
+          <div class="order-empty">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <span id="emptyHint">Оберіть будь-який товар зліва для оплати</span>
+          </div>
+        </div>
+
+        <div class="checkout-divider"></div>
+
+        <div class="price-summary">
+          <span class="price-label">До сплати:</span>
+          <span class="price-val" id="totalPriceVal">0 ₴</span>
+        </div>
+
         <button id="submitBtn" onclick="generateLink()" disabled>
           <span id="payText">Оплатити</span>
-          <i class="fas fa-arrow-right"></i>
+          <i class="fa-solid fa-arrow-right"></i>
         </button>
-      </div>
 
-      <!-- ДИСКЛЕЙМЕР -->
-      <div class="disclaimer-box">
+        <div class="guarantees">
+          <div class="guarantee-item">
+            <i class="fa-solid fa-lock"></i>
+            <span>Безпечна оплата через Donatello / Mono / LiqPay</span>
+          </div>
+          <div class="guarantee-item">
+            <i class="fa-solid fa-bolt"></i>
+            <span>Миттєва активація на сервері</span>
+          </div>
+        </div>
+
         <p class="disclaimer-text" id="disclaimerText">
-          Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів. Кошти за придбані товари поверненню не підлягають. З кожної транзакції сплачуються податки до бюджету України 🇺🇦.
+          Здійснюючи оплату, ви погоджуєтесь з правилами сервера. Усі покупки є добровільним внеском на розвиток проекту.
         </p>
       </div>
-    </div>
+    </aside>
+
   </main>
 
   <script src="script.js"></script>
