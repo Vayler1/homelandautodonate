@@ -52,12 +52,14 @@ const storeData = [
 // --- СИСТЕМА ПЕРЕКЛАДІВ ---
 const translations = {
   uk: {
+    backBtn: "На головну",
     motto: "Твоя земля. Твоя історія.", step1: "Введіть ваші дані", step2: "Оберіть товар",
     warning: "<strong>Гравцям Bedrock!</strong> Не забудьте вказати <span>. (крапку)</span> перед ніком!",
-    placeholder: "Ваш нікнейм...", emptyCart: "Оберіть товар, щоб продовжити", selected: "Обрано:", payBtn: "Оплатити", loading: "Створення...",
+    placeholder: "Ваш ігровий нікнейм...", emptyCart: "Оберіть товар, щоб продовжити", selected: "Обрано:", payBtn: "Оплатити", loading: "Створення...",
     disclaimer: "Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів. Кошти за придбані товари поверненню не підлягають. З кожної транзакції сплачуються податки до бюджету України 🇺🇦."
   },
   en: {
+    backBtn: "Main site",
     motto: "Your land. Your story.", step1: "Enter your details", step2: "Select product",
     warning: "<strong>Bedrock players!</strong> Do not forget to put a <span>. (dot)</span> before your nickname!",
     placeholder: "Your nickname...", emptyCart: "Select a product to continue", selected: "Selected:", payBtn: "Pay", loading: "Creating...",
@@ -69,6 +71,7 @@ const translations = {
     "Кейс валюти": "Currency Case", "Преміум Батлпас": "Premium Battlepass", "1 сезон": "1 season"
   },
   de: {
+    backBtn: "Zur Website",
     motto: "Dein Land. Deine Geschichte.", step1: "Gib deine Daten ein", step2: "Produkt wählen",
     warning: "<strong>Bedrock-Spieler!</strong> Vergiss nicht, einen <span>. (Punkt)</span> vor dem Nicknamen zu setzen!",
     placeholder: "Dein Nickname...", emptyCart: "Wähle ein Produkt aus, um fortzufahren", selected: "Ausgewählt:", payBtn: "Bezahlen", loading: "Erstellen...",
@@ -80,6 +83,7 @@ const translations = {
     "Кейс валюти": "Währungskiste", "Преміум Батлпас": "Premium Battlepass", "1 сезон": "1 Saison"
   },
   pl: {
+    backBtn: "Na stronę główną",
     motto: "Twoja ziemia. Twoja historia.", step1: "Wpisz swoje dane", step2: "Wybierz produkt",
     warning: "<strong>Gracze Bedrock!</strong> Nie zapomnijcie dodać <span>. (kropki)</span> przed nickiem!",
     placeholder: "Twój nick...", emptyCart: "Wybierz produkt, aby kontynuować", selected: "Wybrano:", payBtn: "Zapłać", loading: "Tworzenie...",
@@ -91,6 +95,7 @@ const translations = {
     "Кейс валюти": "Skrzynia Waluty", "Преміум Батлпас": "Karnet Bojowy", "1 сезон": "1 sezon"
   },
   fr: {
+    backBtn: "Site principal",
     motto: "Votre terre. Votre histoire.", step1: "Entrez vos détails", step2: "Sélectionnez le produit",
     warning: "<strong>Joueurs Bedrock!</strong> N'oubliez pas de mettre un <span>. (point)</span> avant votre pseudo !",
     placeholder: "Votre pseudo...", emptyCart: "Sélectionnez un produit pour continuer", selected: "Sélectionné:", payBtn: "Payer", loading: "Création...",
@@ -102,6 +107,7 @@ const translations = {
     "Кейс валюти": "Caisse de Monnaie", "Преміум Батлпас": "Battlepass Premium", "1 сезон": "1 saison"
   },
   es: {
+    backBtn: "Sitio principal",
     motto: "Tu tierra. Tu historia.", step1: "Ingresa tus datos", step2: "Seleccionar producto",
     warning: "<strong>¡Jugadores de Bedrock!</strong> ¡No olviden poner un <span>. (punto)</span> antes del apodo!",
     placeholder: "Tu apodo...", emptyCart: "Seleccione un producto para continuar", selected: "Seleccionado:", payBtn: "Pagar", loading: "Creando...",
@@ -114,23 +120,21 @@ const translations = {
   }
 };
 
-
 let currentLang = 'uk';
 
 function t(key) {
-  // Якщо є переклад у поточному словнику — беремо його, інакше залишаємо оригінал ключа
   return (translations[currentLang] && translations[currentLang][key]) ? translations[currentLang][key] : key;
 }
 
 function getDonatelloLang(lang) {
   if (lang === 'uk') return 'ua';
   if (lang === 'pl') return 'pl';
-  return 'en'; // Всі інші мови (німецька, французька, іспанська, англійська) відкривають англійський donatello
+  return 'en';
 }
 
-// --- ДИНАМІЧНИЙ КУРС ВАЛЮТ (За замовчуванням + Оновлення з НБУ) ---
+// Курси валют
 let exchangeRates = {
-  en: { symbol: '$', rate: 45.00 }, // Резервний курс
+  en: { symbol: '$', rate: 45.00 },
   de: { symbol: '€', rate: 50.55 },
   fr: { symbol: '€', rate: 50.55 },
   es: { symbol: '€', rate: 50.55 },
@@ -139,7 +143,6 @@ let exchangeRates = {
 
 async function fetchRealRates() {
   try {
-    // API Національного Банку України (безкоштовне, без ключів)
     const res = await fetch("https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json");
     const data = await res.json();
     
@@ -153,17 +156,14 @@ async function fetchRealRates() {
     exchangeRates.es.rate = eur;
     exchangeRates.pl.rate = pln;
     
-    // Якщо користувач вже встиг вибрати іноземну мову до того як курси завантажились - оновлюємо інтерфейс
     if (currentLang !== 'uk') {
       renderProducts(currentCategory);
       updateCheckoutState();
     }
   } catch (error) {
-    console.error("Не вдалося завантажити актуальні курси НБУ, використовуються базові.", error);
+    console.error("Не вдалося завантажити курси НБУ, використовуються резервні.");
   }
 }
-
-// ----------------------------
 
 let currentCategory = storeData[0].id;
 let selectedProduct = null;
@@ -173,6 +173,8 @@ const gridContainer = document.getElementById("productsGrid");
 const nicknameInput = document.getElementById("nickname");
 const submitBtn = document.getElementById("submitBtn");
 const selectedInfo = document.getElementById("selectedInfo");
+const modal = document.getElementById("language-modal");
+const currentLangLabel = document.getElementById("currentLangLabel");
 
 function initStore() {
   renderTabs();
@@ -188,19 +190,21 @@ function updateStaticTexts() {
   document.getElementById("step2Text").innerText = t("step2");
   document.getElementById("payText").innerText = t("payBtn");
   document.getElementById("disclaimerText").innerText = t("disclaimer");
+  document.getElementById("backToSiteText").innerText = t("backBtn");
+  currentLangLabel.innerText = currentLang.toUpperCase();
   updateCheckoutState();
+}
+
+function openLanguageModal() {
+  modal.style.display = "flex";
+  setTimeout(() => { modal.style.opacity = '1'; }, 10);
 }
 
 function setLanguage(lang) {
   currentLang = lang;
-  
-  // Закриття модалки
-  const modal = document.getElementById("language-modal");
   modal.style.opacity = '0';
   modal.style.transition = 'opacity 0.3s ease';
   setTimeout(() => { modal.style.display = "none"; }, 300);
-
-  // Оновлення інтерфейсу
   initStore();
 }
 
@@ -221,7 +225,6 @@ function renderTabs() {
 
 function getPriceDisplay(price) {
   let display = `${price} ₴`;
-  // Якщо вибрана не українська мова - рахуємо динамічну конвертацію
   if (currentLang !== 'uk' && exchangeRates[currentLang]) {
     const { symbol, rate } = exchangeRates[currentLang];
     const converted = (price / rate).toFixed(2);
@@ -240,7 +243,7 @@ function renderProducts(categoryId) {
     card.className = `product-card ${isSelected ? "selected" : ""}`;
     
     card.innerHTML = `
-      <i class="fas fa-check-circle check-icon"></i>
+      <i class="fas fa-circle-check check-icon"></i>
       <div>
         <div class="product-name">${t(item.shortName)}</div>
         <div class="product-duration">${t(item.desc)}</div>
@@ -284,7 +287,6 @@ function generateLink() {
   submitBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> ${t("loading")}`;
   submitBtn.disabled = true;
 
-  // Формуємо параметри для Donatello, включно з мовою (lang)
   const params = new URLSearchParams({
     a: selectedProduct.price,
     c: nickname,
@@ -296,10 +298,9 @@ function generateLink() {
   
   setTimeout(() => {
     window.location.href = url;
-  }, 500);
+  }, 400);
 }
 
-// Запуск відмальовки
+// Запуск
 initStore();
-// Запуск завантаження реальних курсів у фоні
 fetchRealRates();
