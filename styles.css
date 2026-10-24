@@ -723,142 +723,277 @@ input:focus {
 }
 .flag-img { width: 22px; border-radius: 3px; }
 
-/* --- АДАПТИВНІСТЬ ДЛЯ ПЛАНШЕТІВ ТА ТЕЛЕФОНІВ --- */
+/* =========================================================
+   МОБІЛЬНА АДАПТАЦІЯ ТА ФІКСИ (APP-LIKE DESIGN)
+========================================================= */
+
 @media (max-width: 980px) {
   .store-layout {
     grid-template-columns: 1fr;
     gap: 1.2rem;
+    padding: 0 1rem;
+    margin: 1rem auto 6rem; /* відступ знизу для плаваючої панелі */
   }
+
+  /* Ховаємо десктопний правий чекаут на мобільних пристроях,
+     оскільки знизу з'являється зручний мобільний бар */
   .store-sidebar {
-    position: static;
+    display: none !important;
   }
 }
 
-/* Оптимізація суто під смартфони */
 @media (max-width: 640px) {
+  /* Відступ для сторінки, щоб нижній бар не перекривав останній товар */
   body {
-    padding-bottom: 70px; /* Місце під мобільний нижній бар */
+    padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px));
   }
 
-  .mobile-bottom-bar {
-    display: flex;
-  }
-
+  /* 1. КОМПАКТНА ВЕРХНЯ НАВІГАЦІЯ */
   .top-nav {
-    padding: 0.65rem 1rem;
+    padding: 0.6rem 0.9rem;
   }
   .nav-logo {
-    font-size: 1.05rem;
-    letter-spacing: 1px;
+    font-size: 1.1rem;
+    gap: 8px;
   }
   .nav-logo img {
-    height: 28px;
+    height: 26px;
   }
   .nav-btn-home span {
-    display: none; /* Економить місце на екрані телефону */
+    display: none; /* Залишаємо лише компактну іконку стрілки */
   }
-  .nav-btn-home {
-    padding: 0.5rem 0.75rem;
-  }
-
-  .store-layout {
-    padding: 0 0.85rem;
-    margin: 1rem auto 2rem;
+  .nav-btn-home, .nav-btn-subtle {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.8rem;
+    border-radius: 9px;
   }
 
+  /* 2. КОМПАКТНИЙ HERO-БАНЕР (не займає пів екрана) */
   .brand-hero {
-    padding: 1.1rem 1.2rem;
-    border-radius: 16px;
-    gap: 10px;
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+    margin-bottom: 0.9rem;
+    gap: 8px;
+  }
+  .hero-left {
+    gap: 12px;
   }
   .hero-logo {
-    height: 44px;
+    height: 40px;
+  }
+  .brand-badge {
+    font-size: 0.65rem;
+    padding: 2px 7px;
+    margin-bottom: 2px;
   }
   .gradient-text {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
+    line-height: 1.15;
   }
   .motto-text {
-    font-size: 0.82rem;
+    font-size: 0.75rem;
   }
   .hero-right {
     width: 100%;
+    margin-top: 2px;
   }
   .stat-pill {
     width: 100%;
     justify-content: center;
-    padding: 0.45rem;
-    font-size: 0.75rem;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.72rem;
+    border-radius: 20px;
   }
 
+  /* 3. КРОКИ (ПАНЕЛІ ВВОДУ) */
   .panel-card {
-    padding: 1.15rem;
-    border-radius: 16px;
-    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: 0.85rem;
+  }
+  .panel-header {
+    gap: 9px;
+    margin-bottom: 0.8rem;
+  }
+  .step-num {
+    min-width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+    border-radius: 7px;
   }
   .panel-title {
-    font-size: 1rem;
+    font-size: 0.92rem;
   }
   .panel-desc {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
 
+  /* Поле нікнейму */
+  .input-row {
+    margin-bottom: 0.6rem;
+  }
   input {
-    padding: 0.8rem 0.9rem 0.8rem 2.6rem;
-    font-size: 0.9rem;
+    padding: 0.75rem 0.85rem 0.75rem 2.6rem;
+    font-size: 0.88rem;
+    border-radius: 11px;
   }
   .input-wrapper i {
     left: 0.9rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
-  /* Сітка карток: 2 компактні колонки на смартфонах */
+  .bedrock-hint {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.72rem;
+    border-radius: 8px;
+  }
+
+  /* 4. ГОРИЗОНТАЛЬНІ ТАБИ КАТЕГОРІЙ */
+  .category-tabs {
+    gap: 6px;
+    margin-bottom: 0.9rem;
+    padding-bottom: 4px;
+  }
+  .category-tab-btn {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    gap: 6px;
+  }
+
+  /* 5. АКУРАТНІ КАРТКИ ТОВАРІВ (2 колонки без перекосів) */
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
-
   .item-card {
-    padding: 0.85rem;
+    padding: 0.75rem;
     border-radius: 13px;
+    background: rgba(14, 16, 23, 0.85);
+  }
+  .item-card-top {
+    margin-bottom: 0.5rem;
   }
   .item-icon-box {
-    width: 34px;
-    height: 34px;
-    font-size: 0.95rem;
-    border-radius: 9px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+    border-radius: 8px;
   }
   .item-tag {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     padding: 2px 5px;
+    border-radius: 4px;
   }
   .item-title {
     font-size: 0.88rem;
-    line-height: 1.2;
-    margin-top: 0.2rem;
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .item-desc {
-    font-size: 0.72rem;
-    margin-bottom: 0.65rem;
+    font-size: 0.68rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .item-bottom {
+    padding-top: 0.5rem;
   }
   .item-price {
     font-size: 1.05rem;
   }
   .item-converted {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
-  .modal-content {
-    padding: 1.4rem 1.1rem;
-    border-radius: 18px;
+  /* 6. ПРАВИЛЬНИЙ СТІКІ-БАР З УРАХУВАННЯМ SAFARI SAFE-AREA */
+  .mobile-bottom-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(11, 13, 19, 0.96);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-top: 1px solid rgba(16, 185, 129, 0.35);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
+    /* Враховує шторку жестів iPhone / панель Safari: */
+    padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px)) 1rem;
+    z-index: 9999;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    transform: translateY(120%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .modal-buttons {
-    grid-template-columns: 1fr;
-    gap: 7px;
+
+  .mobile-bottom-bar.show {
+    transform: translateY(0);
+  }
+
+  .mobile-bar-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .mobile-bar-title {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #94a3b8;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .mobile-bar-price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  .mobile-bar-price small {
+    font-size: 0.72rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-left: 3px;
+  }
+
+  .mobile-bar-btn {
+    background: linear-gradient(135deg, var(--primary), #059669);
+    color: #0b0c10;
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1.4rem;
+    font-weight: 800;
+    font-size: 0.92rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    flex-shrink: 0;
+  }
+
+  .mobile-bar-btn:disabled {
+    background: #1f232e;
+    color: #64748b;
+    box-shadow: none;
   }
 }
 
-@media (max-width: 360px) {
+/* Для зовсім маленьких екранів (iPhone SE тощо) */
+@media (max-width: 350px) {
   .products-grid {
-    grid-template-columns: 1fr; /* Для зовсім маленьких екранів */
+    grid-template-columns: 1fr;
   }
 }
