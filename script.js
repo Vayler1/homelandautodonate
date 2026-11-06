@@ -45,7 +45,7 @@ const storeData = [
     name: "Інше",
     icon: "fa-star",
     items: [
-      { name: "Преміум Батлпас (1 сезон)", shortName: "Преміум Батлпас", tag: "season", desc: "Доступ на весь 1 сезон", icon: "fa-star", price: 89 }
+      { name: "Преміум Батлпас (1 сезон)", shortName: "Преміум Батлпас", tag: "season", desc: "Доступ на весь 1 сезон", icon: "fa-star", price: 119 }
     ]
   }
 ];
