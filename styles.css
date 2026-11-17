@@ -125,7 +125,7 @@ body {
   color: var(--text-muted);
 }
 
-/* КАРТКИ ВИБОРУ СЕРВЕРА (ВЕЛИКІ БЛОКИ НА ВХОДІ) */
+/* КАРТКИ ВИБОРУ СЕРВЕРА */
 .mode-select-section {
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
@@ -150,7 +150,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 140px;
-  overflow: hidden;
 }
 .server-card:hover {
   border-color: #2c3547;
@@ -164,7 +163,6 @@ body {
 }
 .server-card-top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 0.8rem;
 }
@@ -180,24 +178,6 @@ body {
 .survival-icon { background: rgba(16, 185, 129, 0.15); color: var(--primary); }
 .grief-icon    { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
 
-.server-status-pill {
-  font-size: 0.72rem;
-  color: var(--primary);
-  background: rgba(16, 185, 129, 0.1);
-  padding: 3px 8px;
-  border-radius: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: 600;
-}
-.status-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--primary);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--primary);
-}
 .server-name {
   font-size: 1.2rem;
   font-weight: 700;
@@ -205,9 +185,9 @@ body {
   margin-bottom: 0.25rem;
 }
 .server-desc {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
-  line-height: 1.35;
+  line-height: 1.4;
 }
 .server-select-indicator {
   display: flex;
@@ -226,7 +206,7 @@ body {
   transform: translateY(0);
 }
 
-/* СЕКЦІЇ ФОРМИ */
+/* ПАНЕЛІ КРОКІВ */
 .panel-card {
   background: var(--panel-bg);
   border: 1px solid var(--panel-border);
@@ -235,7 +215,7 @@ body {
   margin-bottom: 1.2rem;
 }
 
-/* ПОЛЕ НІКА (НЕ МЕНШЕ 16px ДЛЯ IOS!) */
+/* ПОЛЕ НІКА */
 .input-wrapper {
   position: relative;
   display: flex;
@@ -397,7 +377,7 @@ input:focus {
   color: var(--text-muted);
 }
 
-/* БІЧНА ПАНЕЛЬ ЧЕКАУТУ (DESKTOP) */
+/* БІЧНА ПАНЕЛЬ ЧЕКАУТУ */
 .store-sidebar {
   position: sticky;
   top: 75px;
@@ -466,7 +446,7 @@ input:focus {
   color: #0b0d11;
   border: none;
   border-radius: 9px;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -504,7 +484,7 @@ input:focus {
   padding-top: 0.75rem;
 }
 
-/* МОДАЛЬНЕ ВІКНО МОВИ */
+/* МОДАЛКА МОВИ */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -547,12 +527,9 @@ input:focus {
 .lang-modal-btn:hover { background: #1c2230; border-color: var(--primary); }
 .flag-img { width: 20px; border-radius: 3px; }
 
-/* ПЛАВАЮЧИЙ МОБІЛЬНИЙ БАР (ЗАМОВЧУВАННЯМ ПРИХОВАНИЙ НА DESKTOP) */
 .mobile-sticky-bar { display: none; }
 
-/* ========================================================
-   ПОВНА ТА ЧИСТА АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ (< 860px)
-   ======================================================== */
+/* АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ */
 @media (max-width: 860px) {
   .store-layout {
     grid-template-columns: 1fr;
@@ -561,10 +538,8 @@ input:focus {
     gap: 1rem;
   }
   
-  /* Ховаємо десктопний сайдбар */
   .store-sidebar { display: none; }
 
-  /* Великі блоки режимів на мобільних */
   .server-cards-grid {
     grid-template-columns: 1fr;
     gap: 10px;
@@ -574,7 +549,6 @@ input:focus {
     padding: 1rem;
   }
 
-  /* Сітка карток у 2 рівні колонки на телефоні */
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
@@ -599,7 +573,6 @@ input:focus {
   .item-price { font-size: 1rem; }
   .item-converted { font-size: 0.68rem; }
 
-  /* ПЛАВАЮЧИЙ БАР ОПЛАТИ ВНИЗУ ЕКРАНА */
   .mobile-sticky-bar {
     display: flex;
     position: fixed;
@@ -644,9 +617,9 @@ input:focus {
     background: var(--primary);
     color: #0b0d11;
     border: none;
-    padding: 0.75rem 1.3rem;
+    padding: 0.75rem 1.4rem;
     border-radius: 9px;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     font-weight: 700;
     font-family: inherit;
     cursor: pointer;
