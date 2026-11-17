@@ -1,4 +1,4 @@
-// Каталог послуг для обох серверів
+// Каталог товарів для Survival і Grief
 const catalogData = {
   survival: [
     {
@@ -80,15 +80,14 @@ const catalogData = {
   ]
 };
 
-// Словник перекладів
+// Словник перекладів інтерфейсу та товарів
 const translations = {
   uk: {
     backBtn: "На головну",
     modalTitle: "Оберіть мову",
     selectServerTitle: "Оберіть режим гри",
-    selectServerDesc: "Товари та привілеї залежать від обраного сервера",
-    survivalDesc: "Класичне ванільне виживання, економіка та дружня спільнота",
-    griefDesc: "Гріф-сервер, привати блоками, битви за ресурси та рейди",
+    survivalDesc: "Військово-політичне виживання на мапі України: міста, економіка, альянси та війни націй",
+    griefDesc: "Гріф-сервер: привати блоками, PvP-битви за ресурси, клани та рейди",
     selectedLabel: "Обрано",
     enterNickTitle: "Вкажіть ігровий нікнейм",
     enterNickDesc: "На цей обліковий запис надійде придбана послуга",
@@ -99,8 +98,7 @@ const translations = {
     orderSummary: "Деталі замовлення",
     emptyOrder: "Оберіть товар у списку",
     totalLabel: "До сплати:",
-    payBtn: "Оплатити через Donatello",
-    payBtnShort: "Оплатити",
+    payBtn: "Оплатити",
     loading: "Створення посилання...",
     recipient: "Нікнейм:",
     serverLabel: "Сервер:",
@@ -115,9 +113,8 @@ const translations = {
     backBtn: "Home",
     modalTitle: "Select Language",
     selectServerTitle: "Choose Game Mode",
-    selectServerDesc: "Products and ranks depend on the selected server",
-    survivalDesc: "Classic vanilla survival, player economy, and friendly community",
-    griefDesc: "Grief server, protection blocks, raids, and PvP battles",
+    survivalDesc: "Geopolitical survival on the map of Ukraine: cities, alliances, economy, and nation wars",
+    griefDesc: "Grief server: block claims, PvP battles for resources, clans, and raids",
     selectedLabel: "Selected",
     enterNickTitle: "Enter In-Game Nickname",
     enterNickDesc: "The purchased item will be credited to this account",
@@ -128,8 +125,7 @@ const translations = {
     orderSummary: "Order Details",
     emptyOrder: "Select a product from the list",
     totalLabel: "Total:",
-    payBtn: "Pay with Donatello",
-    payBtnShort: "Pay",
+    payBtn: "Pay",
     loading: "Generating link...",
     recipient: "Recipient:",
     serverLabel: "Server:",
@@ -139,15 +135,26 @@ const translations = {
     foreverTag: "PERMANENT",
     periodTag: "LIMITED",
     wipeTag: "TILL WIPE",
-    "Привілеї": "Ranks", "Кейси": "Cases", "Валюта": "Currency", "Інше": "Other", "Кейси та Пропуски": "Cases & Passes"
+    // Категорії
+    "Привілеї": "Ranks", "Кейси": "Cases", "Валюта": "Currency", "Інше": "Other", "Кейси та Пропуски": "Cases & Passes",
+    // Товари
+    "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Sponsor",
+    "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Voievoda",
+    "Донат кейс": "Donate Case", "Донат-кейс": "Donate Case", "Косметичний кейс": "Cosmetic Case",
+    "Кейс валюти": "Currency Case", "Преміум Батлпас": "Premium Battlepass", "Premium Battlepass": "Premium Battlepass",
+    // Описи
+    "Назавжди": "Permanent", "Термін: 3 місяці": "3 Months access", "Термін: 1 місяць": "1 Month access",
+    "Випадковий донат-ранг": "Random donate rank", "Випадковий донат назавжди": "Random permanent rank",
+    "1 шт. (Назавжди)": "1 pc. (Permanent)", "5 шт.": "Bundle: 5 pcs.", "10 шт.": "Large: 10 pcs.", "20 шт.": "Mega: 20 pcs.",
+    "1 шт. (до вайпу)": "1 pc. (till wipe)", "5 шт. (до вайпу)": "5 pcs. (till wipe)", "10 шт. (до вайпу)": "10 pcs. (till wipe)", "20 шт. (до вайпу)": "20 pcs. (till wipe)",
+    "Доступ на 1 сезон": "Full Season 1 access", "Доступ на 1 сезон (1 міс.)": "Season 1 access (1 mo.)"
   },
   de: {
     backBtn: "Zur Startseite",
     modalTitle: "Sprache wählen",
     selectServerTitle: "Spielmodus wählen",
-    selectServerDesc: "Produkte und Ränge hängen vom gewählten Server ab",
-    survivalDesc: "Klassisches Vanilla-Survival, Wirtschaft und freundliche Community",
-    griefDesc: "Grief-Server mit Schutzblöcken, Ressourcen-Kämpfen und Raids",
+    survivalDesc: "Geopolitisches Survival auf der Ukraine-Karte: Städte, Allianzen, Wirtschaft und Kriege",
+    griefDesc: "Grief-Server mit Block-Claims, PvP-Ressourcenkämpfen, Clans und Raids",
     selectedLabel: "Ausgewählt",
     enterNickTitle: "Spielernamen eingeben",
     enterNickDesc: "Der Artikel wird diesem Account gutgeschrieben",
@@ -158,8 +165,7 @@ const translations = {
     orderSummary: "Bestellübersicht",
     emptyOrder: "Wähle ein Produkt aus der Liste",
     totalLabel: "Gesamtbetrag:",
-    payBtn: "Mit Donatello bezahlen",
-    payBtnShort: "Bezahlen",
+    payBtn: "Bezahlen",
     loading: "Link wird generiert...",
     recipient: "Empfänger:",
     serverLabel: "Server:",
@@ -169,15 +175,23 @@ const translations = {
     foreverTag: "DAUERHAFT",
     periodTag: "ZEITLICH",
     wipeTag: "BIS WIPE",
-    "Привілеї": "Ränge", "Кейси": "Kisten", "Валюта": "Währung", "Інше": "Sonstiges", "Кейси та Пропуски": "Kisten & Pässe"
+    "Привілеї": "Ränge", "Кейси": "Kisten", "Валюта": "Währung", "Інше": "Sonstiges", "Кейси та Пропуски": "Kisten & Pässe",
+    "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Sponsor",
+    "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Voievoda",
+    "Донат кейс": "Donate Kiste", "Донат-кейс": "Donate Kiste", "Косметичний кейс": "Kosmetische Kiste",
+    "Кейс валюти": "Währungskiste", "Преміум Батлпас": "Premium Battlepass", "Premium Battlepass": "Premium Battlepass",
+    "Назавжди": "Dauerhaft", "Термін: 3 місяці": "3 Monate Laufzeit", "Термін: 1 місяць": "1 Monat Laufzeit",
+    "Випадковий донат-ранг": "Zufälliger Rang", "Випадковий донат назавжди": "Zufälliger Rang dauerhaft",
+    "1 шт. (Назавжди)": "1 Stk. (Dauerhaft)", "5 шт.": "Paket: 5 Stk.", "10 шт.": "Großes Paket: 10 Stk.", "20 шт.": "Maxi: 20 Stk.",
+    "1 шт. (до вайпу)": "1 Stk. (bis zum Wipe)", "5 шт. (до вайпу)": "5 Stk. (bis zum Wipe)", "10 шт. (до вайпу)": "10 Stk. (bis zum Wipe)", "20 шт. (до вайпу)": "20 Stk. (bis zum Wipe)",
+    "Доступ на 1 сезон": "Zugang für Saison 1", "Доступ на 1 сезон (1 міс.)": "Zugang für Saison 1 (1 Mon.)"
   },
   pl: {
     backBtn: "Na stronę główną",
     modalTitle: "Wybierz język",
     selectServerTitle: "Wybierz tryb gry",
-    selectServerDesc: "Przedmioty i rangi zależą od wybranego serwera",
-    survivalDesc: "Klasyczny vanilla survival, ekonomia i przyjazna społeczność",
-    griefDesc: "Serwer grief z blokami ochrony, rajdami i walkami o surowce",
+    survivalDesc: "Geopolityczny survival na mapie Ukrainy: miasta, sojusze, gospodarka i wojny narodów",
+    griefDesc: "Serwer grief: działki blokowe, walki PvP o surowce, klany i rajdy",
     selectedLabel: "Wybrano",
     enterNickTitle: "Wpisz swój nick",
     enterNickDesc: "Zakupiony przedmiot zostanie przypisany do tego konta",
@@ -188,8 +202,7 @@ const translations = {
     orderSummary: "Podsumowanie zamówienia",
     emptyOrder: "Wybierz produkt z listy",
     totalLabel: "Do zapłaty:",
-    payBtn: "Zapłać przez Donatello",
-    payBtnShort: "Zapłać",
+    payBtn: "Zapłać",
     loading: "Tworzenie linku...",
     recipient: "Odbiorca:",
     serverLabel: "Serwer:",
@@ -199,15 +212,23 @@ const translations = {
     foreverTag: "NA ZAWSZE",
     periodTag: "OKRES",
     wipeTag: "DO WIPE'A",
-    "Привілеї": "Rangi", "Кейси": "Skrzynie", "Валюта": "Waluta", "Інше": "Inne", "Кейси та Пропуски": "Skrzynie i Przepustki"
+    "Привілеї": "Rangi", "Кейси": "Skrzynie", "Валюта": "Waluta", "Інше": "Inne", "Кейси та Пропуски": "Skrzynie i Przepustki",
+    "Козак": "Kozak", "Сотник": "Setnik", "Полковник": "Pułkownik", "Гетьман": "Hetman", "Спонсор": "Sponsor",
+    "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Wojewoda",
+    "Донат кейс": "Donate Skrzynia", "Донат-кейс": "Donate Skrzynia", "Косметичний кейс": "Skrzynia Kosmetyczna",
+    "Кейс валюти": "Skrzynia Waluty", "Преміум Батлпас": "Premium Battlepass", "Premium Battlepass": "Premium Battlepass",
+    "Назавжди": "Na zawsze", "Термін: 3 місяці": "Okres: 3 miesiące", "Термін: 1 місяць": "Okres: 1 miesiąc",
+    "Випадковий донат-ранг": "Losowa ranga donate", "Випадковий донат назавжди": "Losowa ranga na zawsze",
+    "1 шт. (Назавжди)": "1 szt. (Na zawsze)", "5 шт.": "Zestaw: 5 szt.", "10 шт.": "Duży zestaw: 10 szt.", "20 шт.": "Mega: 20 szt.",
+    "1 шт. (до вайпу)": "1 szt. (do wipe'a)", "5 шт. (до вайпу)": "5 szt. (do wipe'a)", "10 шт. (до вайпу)": "10 szt. (do wipe'a)", "20 шт. (до вайпу)": "20 szt. (do wipe'a)",
+    "Доступ на 1 сезон": "Dostęp do całego 1 sezonu", "Доступ на 1 сезон (1 міс.)": "Dostęp do 1 sezonu (1 mies.)"
   },
   fr: {
     backBtn: "Accueil",
     modalTitle: "Choisir la langue",
     selectServerTitle: "Choisissez le mode",
-    selectServerDesc: "Les articles et grades dépendent du serveur sélectionné",
-    survivalDesc: "Survie vanilla classique, économie et communauté chaleureuse",
-    griefDesc: "Serveur Grief avec blocs de protection, combats et pillages",
+    survivalDesc: "Survie géopolitique sur la carte de l'Ukraine : villes, alliances, économie et guerres",
+    griefDesc: "Serveur Grief : claims par blocs, batailles PvP pour les ressources, clans et pillages",
     selectedLabel: "Sélectionné",
     enterNickTitle: "Entrez votre pseudo",
     enterNickDesc: "Le produit sera crédité sur ce compte de jeu",
@@ -218,8 +239,7 @@ const translations = {
     orderSummary: "Détails de la commande",
     emptyOrder: "Sélectionnez un article dans la liste",
     totalLabel: "À payer :",
-    payBtn: "Payer avec Donatello",
-    payBtnShort: "Payer",
+    payBtn: "Payer",
     loading: "Création du lien...",
     recipient: "Destinataire :",
     serverLabel: "Serveur :",
@@ -229,15 +249,23 @@ const translations = {
     foreverTag: "À VIE",
     periodTag: "TEMPORAIRE",
     wipeTag: "JUSQU'AU WIPE",
-    "Привілеї": "Grades", "Кейси": "Caisses", "Валюта": "Monnaie", "Інше": "Autre", "Кейси та Пропуски": "Caisses & Pass"
+    "Привілеї": "Grades", "Кейси": "Caisses", "Валюта": "Monnaie", "Інше": "Autre", "Кейси та Пропуски": "Caisses & Pass",
+    "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Sponsor",
+    "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Voïvode",
+    "Донат кейс": "Caisse Donate", "Донат-кейс": "Caisse Donate", "Косметичний кейс": "Caisse Cosmétique",
+    "Кейс валюти": "Caisse de Monnaie", "Преміум Батлпас": "Battlepass Premium", "Premium Battlepass": "Battlepass Premium",
+    "Назавжди": "À vie", "Термін: 3 місяці": "Période : 3 mois", "Термін: 1 місяць": "Période : 1 mois",
+    "Випадковий донат-ранг": "Grade donateur aléatoire", "Випадковий донат назавжди": "Grade aléatoire à vie",
+    "1 шт. (Назавжди)": "1 pc. (À vie)", "5 шт.": "Pack : 5 pcs.", "10 шт.": "Grand pack : 10 pcs.", "20 шт.": "Méga : 20 pcs.",
+    "1 шт. (до вайпу)": "1 pc. (jusqu'au wipe)", "5 шт. (до вайпу)": "5 pcs. (jusqu'au wipe)", "10 шт. (до вайпу)": "10 pcs. (jusqu'au wipe)", "20 шт. (до вайпу)": "20 pcs. (jusqu'au wipe)",
+    "Доступ на 1 сезон": "Accès pour la saison 1", "Доступ на 1 сезон (1 міс.)": "Accès saison 1 (1 mois)"
   },
   es: {
     backBtn: "Inicio",
     modalTitle: "Seleccionar idioma",
     selectServerTitle: "Elige el modo de juego",
-    selectServerDesc: "Los productos dependen del servidor seleccionado",
-    survivalDesc: "Supervivencia vainilla clásica, economía y comunidad amigable",
-    griefDesc: "Servidor grief con bloques de protección, saqueos y batallas",
+    survivalDesc: "Supervivencia geopolítica en el mapa de Ucrania: ciudades, alianzas, economía y guerras",
+    griefDesc: "Servidor grief: reclamos por bloques, batallas PvP por recursos, clanes y saqueos",
     selectedLabel: "Seleccionado",
     enterNickTitle: "Ingresa tu apodo",
     enterNickDesc: "El artículo comprado se acreditará a esta cuenta",
@@ -248,8 +276,7 @@ const translations = {
     orderSummary: "Detalles del pedido",
     emptyOrder: "Selecciona un producto de la lista",
     totalLabel: "Total:",
-    payBtn: "Pagar con Donatello",
-    payBtnShort: "Pagar",
+    payBtn: "Pagar",
     loading: "Generando enlace...",
     recipient: "Destinatario:",
     serverLabel: "Servidor:",
@@ -259,7 +286,16 @@ const translations = {
     foreverTag: "PERMANENTE",
     periodTag: "TEMPORAL",
     wipeTag: "HASTA EL WIPE",
-    "Привілеї": "Rangos", "Кейси": "Cajas", "Валюта": "Moneda", "Інше": "Otro", "Кейси та Пропуски": "Cajas y Pases"
+    "Привілеї": "Rangos", "Кейси": "Cajas", "Валюта": "Moneda", "Інше": "Otro", "Кейси та Пропуски": "Cajas y Pases",
+    "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Patrocinador",
+    "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Voivoda",
+    "Донат кейс": "Caja Donate", "Донат-кейс": "Caja Donate", "Косметичний кейс": "Caja Cosmética",
+    "Кейс валюти": "Caja de Moneda", "Преміум Батлпас": "Pase de Batalla Premium", "Premium Battlepass": "Pase de Batalla Premium",
+    "Назавжди": "Permanente", "Термін: 3 місяці": "Período: 3 meses", "Термін: 1 місяць": "Período: 1 mes",
+    "Випадковий донат-ранг": "Rango de donación aleatorio", "Випадковий донат назавжди": "Rango aleatorio permanente",
+    "1 шт. (Назавжди)": "1 ud. (Permanente)", "5 шт.": "Paquete: 5 uds.", "10 шт.": "Paquete grande: 10 uds.", "20 шт.": "Mega: 20 uds.",
+    "1 шт. (до вайпу)": "1 ud. (hasta el wipe)", "5 шт. (до вайпу)": "5 uds. (hasta el wipe)", "10 шт. (до вайпу)": "10 uds. (hasta el wipe)", "20 шт. (до вайпу)": "20 uds. (hasta el wipe)",
+    "Доступ на 1 сезон": "Acceso a temporada 1", "Доступ на 1 сезон (1 міс.)": "Acceso a temporada 1 (1 mes)"
   }
 };
 
@@ -280,7 +316,7 @@ function t(key) {
   return key;
 }
 
-// Застосування перекладів до всіх статичних елементів
+// Застосування перекладу до розмітки
 function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -350,14 +386,18 @@ function renderProducts() {
     if (item.tag === "period") { tagClass = "tag-period"; tagKey = "periodTag"; }
     else if (item.tag === "wipe") { tagClass = "tag-wipe"; tagKey = "wipeTag"; }
 
+    // Локалізація назви та опису
+    const localizedTitle = t(item.shortName);
+    const localizedDesc = t(item.desc);
+
     card.innerHTML = `
       <div class="item-card-top">
         <div class="item-icon-box"><i class="fa-solid ${item.icon}"></i></div>
         <span class="item-tag ${tagClass}">${t(tagKey)}</span>
       </div>
       <div>
-        <div class="item-title">${item.shortName}</div>
-        <div class="item-desc">${item.desc}</div>
+        <div class="item-title">${localizedTitle}</div>
+        <div class="item-desc">${localizedDesc}</div>
       </div>
       <div class="item-bottom">
         <div class="item-price">${item.price} ₴</div>
@@ -387,13 +427,15 @@ function updateCheckoutSidebar() {
   const mProductPrice = document.getElementById("mProductPrice");
 
   if (selectedProduct) {
-    const converted = getConvertedPrice(selectedProduct.price);
     totalPriceVal.innerText = `${selectedProduct.price} ₴`;
+
+    const localizedTitle = t(selectedProduct.shortName);
+    const localizedDesc = t(selectedProduct.desc);
 
     orderContent.innerHTML = `
       <div class="order-selected-box">
         <div class="order-row">
-          <span class="order-row-title">${selectedProduct.name}</span>
+          <span class="order-row-title">${localizedTitle} <small style="color:var(--text-muted); font-size:0.75rem;">(${localizedDesc})</small></span>
           <strong style="color:var(--primary);">${selectedProduct.price} ₴</strong>
         </div>
         <div class="order-row">
@@ -408,10 +450,9 @@ function updateCheckoutSidebar() {
     `;
     submitBtn.disabled = nick.length === 0;
 
-    // Оновлення мобільного бару
     if (mobileBar) {
       mobileBar.classList.add("visible");
-      mProductName.innerText = `${currentServer.toUpperCase()}: ${selectedProduct.shortName}`;
+      mProductName.innerText = `${currentServer.toUpperCase()}: ${localizedTitle}`;
       mProductPrice.innerText = `${selectedProduct.price} ₴`;
     }
   } else {
@@ -454,9 +495,8 @@ function generateLink() {
   const mBtn = document.getElementById("mPayBtn");
   if (mBtn) mBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
 
-  // Формуємо коментар з міткою для бота
+  // В Donatello передаємо мітку [server] та оригінальну назву товару для плагіна
   const serverComment = `[${currentServer}] ${selectedProduct.name}`;
-
   const donatelloLang = currentLang === 'uk' ? 'ua' : (currentLang === 'pl' ? 'pl' : 'en');
 
   const params = new URLSearchParams({
@@ -491,6 +531,6 @@ window.addEventListener("click", (e) => {
   if (e.target === modal) modal.classList.remove("open");
 });
 
-// Ініціалізація
+// Старт
 applyTranslations();
 switchServer('survival');
