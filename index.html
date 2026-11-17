@@ -14,12 +14,12 @@
 </head>
 <body>
 
-  <!-- Модальне вікно мов -->
+  <!-- Модальне вікно вибору мови -->
   <div id="language-modal" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <i class="fa-solid fa-earth-europe modal-globe"></i>
-        <h2>Оберіть мову / Select Language</h2>
+        <i class="fa-solid fa-globe modal-globe"></i>
+        <h3 data-i18n="modalTitle">Оберіть мову</h3>
       </div>
       <div class="modal-buttons">
         <button class="lang-modal-btn" onclick="setLanguage('uk')"><img src="https://flagcdn.com/w40/ua.png" class="flag-img" alt="UA"> Українська</button>
@@ -32,6 +32,7 @@
     </div>
   </div>
 
+  <!-- Шапка сайту -->
   <header class="top-nav">
     <div class="top-nav-inner">
       <a href="https://homeland.pp.ua/" class="nav-logo">
@@ -46,7 +47,7 @@
         </button>
         <a href="https://homeland.pp.ua/" class="nav-btn-home">
           <i class="fa-solid fa-arrow-left"></i>
-          <span id="backToSiteText">На головну</span>
+          <span data-i18n="backBtn">На головну</span>
         </a>
       </div>
     </div>
@@ -56,103 +57,156 @@
     
     <div class="store-main">
       
-      <!-- Вибір сервера -->
-      <div class="panel-card server-selector-card">
-        <span class="section-label" id="serverSelectTitle">Оберіть сервер:</span>
-        <div class="server-switch-group">
-          <button type="button" class="server-tab-btn active" id="btn-server-survival" onclick="switchServer('survival')">
-            <i class="fa-solid fa-tree"></i>
-            <span>Survival</span>
-          </button>
-          <button type="button" class="server-tab-btn" id="btn-server-grief" onclick="switchServer('grief')">
-            <i class="fa-solid fa-skull"></i>
-            <span>Grief</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Крок 1 -->
-      <div class="panel-card">
-        <div class="panel-header">
-          <div class="step-num">1</div>
+      <!-- ВЕЛИКИЙ ВИБІР РЕЖИМУ НА СТАРТІ СТОРІНКИ -->
+      <section class="mode-select-section">
+        <div class="section-title-wrap">
+          <span class="step-badge">1</span>
           <div>
-            <h3 class="panel-title" id="step1Text">Вкажіть ваш нікнейм</h3>
-            <p class="panel-desc" id="step1DescText">Товар буде автоматично виданий на цей ігровий обліковий запис</p>
+            <h2 class="step-title" data-i18n="selectServerTitle">Оберіть режим гри</h2>
+            <p class="step-sub" data-i18n="selectServerDesc">Товари та привілеї залежать від обраного сервера</p>
           </div>
         </div>
 
-        <div class="input-row">
-          <div class="input-wrapper">
-            <i class="fas fa-user"></i>
-            <input type="text" id="nickname" placeholder="Ваш нікнейм..." autocomplete="off" />
+        <div class="server-cards-grid">
+          
+          <!-- Блок Survival -->
+          <div class="server-card active" id="card-survival" onclick="switchServer('survival')">
+            <div class="server-card-glow"></div>
+            <div class="server-card-top">
+              <div class="server-icon-box survival-icon">
+                <i class="fa-solid fa-campground"></i>
+              </div>
+              <span class="server-status-pill"><span class="status-dot"></span> Online</span>
+            </div>
+            <div class="server-card-info">
+              <h3 class="server-name">Survival</h3>
+              <p class="server-desc" data-i18n="survivalDesc">Класичне ванільне виживання, економіка та дружня спільнота</p>
+            </div>
+            <div class="server-select-indicator">
+              <i class="fa-solid fa-circle-check"></i>
+              <span data-i18n="selectedLabel">Обрано</span>
+            </div>
+          </div>
+
+          <!-- Блок Grief -->
+          <div class="server-card" id="card-grief" onclick="switchServer('grief')">
+            <div class="server-card-glow"></div>
+            <div class="server-card-top">
+              <div class="server-icon-box grief-icon">
+                <i class="fa-solid fa-skull-crossbones"></i>
+              </div>
+              <span class="server-status-pill"><span class="status-dot"></span> Online</span>
+            </div>
+            <div class="server-card-info">
+              <h3 class="server-name">Grief</h3>
+              <p class="server-desc" data-i18n="griefDesc">Гріф-сервер, привати блоками, битви за ресурси та рейди</p>
+            </div>
+            <div class="server-select-indicator">
+              <i class="fa-solid fa-circle-check"></i>
+              <span data-i18n="selectedLabel">Обрано</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- КРОК 2: Введення нікнейму -->
+      <section class="panel-card" id="nickSection">
+        <div class="section-title-wrap">
+          <span class="step-badge">2</span>
+          <div>
+            <h2 class="step-title" data-i18n="enterNickTitle">Вкажіть ігровий нікнейм</h2>
+            <p class="step-sub" data-i18n="enterNickDesc">На цей обліковий запис надійде придбана послуга</p>
           </div>
         </div>
 
-        <div class="bedrock-hint" id="warningText">
+        <div class="input-wrapper">
+          <i class="fa-solid fa-user input-icon"></i>
+          <input type="text" id="nickname" data-i18n-placeholder="nickPlaceholder" placeholder="Ваш нікнейм у грі..." autocomplete="off" />
+        </div>
+
+        <div class="bedrock-notice">
           <i class="fa-solid fa-circle-info"></i>
-          <span>Гравцям <strong>Bedrock</strong> обов'язково вказувати крапку <code>.</code> перед нікнеймом.</span>
+          <span data-i18n="bedrockNotice">Гравцям <strong>Bedrock</strong> обов'язково писати крапку <code>.</code> перед ніком!</span>
         </div>
-      </div>
+      </section>
 
-      <!-- Крок 2 -->
-      <div class="panel-card">
-        <div class="panel-header">
-          <div class="step-num">2</div>
+      <!-- КРОК 3: Вибір товару -->
+      <section class="panel-card">
+        <div class="section-title-wrap">
+          <span class="step-badge">3</span>
           <div>
-            <h3 class="panel-title" id="step2Text">Виберіть товар</h3>
-            <p class="panel-desc" id="step2DescText">Оберіть послугу з каталогу обраного сервера</p>
+            <h2 class="step-title" data-i18n="chooseProductTitle">Оберіть послугу</h2>
+            <p class="step-sub" data-i18n="chooseProductDesc">Натисніть на картку товару для оформлення</p>
           </div>
         </div>
 
+        <!-- Горизонтальні таби категорій -->
         <div class="category-tabs" id="categoryTabs"></div>
+
+        <!-- Сітка товарів -->
         <div class="products-grid" id="productsGrid"></div>
-      </div>
+      </section>
 
     </div>
 
-    <!-- Чек / Сайдбар -->
+    <!-- БІЧНА ПАНЕЛЬ (DESKTOP) -->
     <aside class="store-sidebar">
       <div class="checkout-card">
-        <div class="checkout-header">
+        <div class="checkout-title">
           <i class="fa-solid fa-receipt"></i>
-          <h3 id="orderSummaryTitle">Деталі замовлення</h3>
+          <span data-i18n="orderSummary">Деталі замовлення</span>
         </div>
 
         <div class="order-content" id="orderContent">
           <div class="order-empty">
-            <span id="emptyHint">Оберіть товар для оплати</span>
+            <i class="fa-solid fa-basket-shopping empty-icon"></i>
+            <span data-i18n="emptyOrder">Оберіть товар у списку</span>
           </div>
         </div>
 
         <div class="checkout-divider"></div>
 
-        <div class="price-summary">
-          <span class="price-label" id="totalPriceLabel">До сплати:</span>
-          <span class="price-val" id="totalPriceVal">0 ₴</span>
+        <div class="price-row">
+          <span class="price-label" data-i18n="totalLabel">До сплати:</span>
+          <span class="price-value" id="totalPriceVal">0 ₴</span>
         </div>
 
         <button id="submitBtn" onclick="generateLink()" disabled>
-          <span id="payText">Оплатити через Donatello</span>
+          <span id="submitBtnText" data-i18n="payBtn">Оплатити через Donatello</span>
+          <i class="fa-solid fa-arrow-right"></i>
         </button>
 
-        <div class="legal-box">
-          <div class="legal-item">
+        <div class="legal-info-box">
+          <div class="legal-info-item">
             <i class="fa-solid fa-shield-halved"></i>
-            <span>Офіційна сплата цифрового контенту через ТОВ «Донателло»</span>
+            <span data-i18n="legalItem1">Офіційна оплата цифрового контенту через ТОВ «Донателло»</span>
           </div>
-          <div class="legal-item">
-            <i class="fa-solid fa-receipt"></i>
-            <span>Всі податки включено: ПДФО 18% та Військовий збір 5% сплачуються платформою автоматично</span>
+          <div class="legal-info-item">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span data-i18n="legalItem2">Повна сплата податків (ПДФО 18% та ВЗ 5%) податковим агентом</span>
           </div>
         </div>
 
-        <p class="disclaimer-text" id="disclaimerText">
-          Здійснюючи платіж, ви купуєте право доступу до авторського цифрового контенту відповідно до публічного агентського договору та правил сервера Homeland.
+        <p class="disclaimer-text" data-i18n="disclaimer">
+          Здійснюючи платіж, ви купуєте право доступу до авторського цифрового контенту відповідно до публічного агентського договору та правил сервера Homeland. Кошти поверненню не підлягають.
         </p>
       </div>
     </aside>
 
   </main>
+
+  <!-- МОБІЛЬНИЙ ПЛАВАЮЧИЙ БАР ОПЛАТИ (ДЛЯ ТЕЛЕФОНІВ) -->
+  <div class="mobile-sticky-bar" id="mobileBar">
+    <div class="mobile-bar-info">
+      <span class="m-product-name" id="mProductName">—</span>
+      <span class="m-price" id="mProductPrice">0 ₴</span>
+    </div>
+    <button class="mobile-pay-btn" id="mPayBtn" onclick="onMobilePayClick()">
+      <span id="mPayBtnText" data-i18n="payBtnShort">Оплатити</span>
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
 
   <script src="script.js"></script>
 </body>
