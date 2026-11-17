@@ -46,11 +46,11 @@ const catalogData = {
       icon: "fa-award",
       items: [
         { name: "Преміум Батлпас (1 сезон)", shortName: "Преміум Батлпас", tag: "period", desc: "Доступ на весь 1 сезон (2 міс.)", icon: "fa-star", price: 119 },
-        { name: "1 рівень БП (75 очків)", shortName: "+1 рівень БП", tag: "points", desc: "Миттєво +75 очків", icon: "fa-angles-up", price: 29 },
-        { name: "2 рівні БП (150 очків)", shortName: "+2 рівні БП", tag: "points", desc: "Миттєво +150 очків", icon: "fa-angles-up", price: 55 },
-        { name: "5 рівнів БП (375 очків)", shortName: "+5 рівнів БП", tag: "points", desc: "Миттєво +375 очків", icon: "fa-angles-up", price: 129 },
-        { name: "10 рівнів БП (750 очків)", shortName: "+10 рівнів БП", tag: "points", desc: "Миттєво +750 очків", icon: "fa-angles-up", price: 249 },
-        { name: "20 рівнів БП (1500 очків)", shortName: "+20 рівнів БП", tag: "points", desc: "Миттєво +1500 очків", icon: "fa-angles-up", price: 469 }
+        { name: "1 рівень БП (100 очків)", shortName: "+1 рівень БП", tag: "points", desc: "Миттєво +100 очків", icon: "fa-angles-up", price: 29 },
+        { name: "2 рівні БП (200 очків)", shortName: "+2 рівні БП", tag: "points", desc: "Миттєво +200 очків", icon: "fa-angles-up", price: 55 },
+        { name: "5 рівнів БП (500 очків)", shortName: "+5 рівнів БП", tag: "points", desc: "Миттєво +500 очків", icon: "fa-angles-up", price: 129 },
+        { name: "10 рівнів БП (1000 очків)", shortName: "+10 рівнів БП", tag: "points", desc: "Миттєво +1000 очків", icon: "fa-angles-up", price: 249 },
+        { name: "20 рівнів БП (2000 очків)", shortName: "+20 рівнів БП", tag: "points", desc: "Миттєво +2000 очків", icon: "fa-angles-up", price: 469 }
       ]
     }
   ],
@@ -158,6 +158,9 @@ const translations = {
     "Донат кейс": "Donate Case", "Донат-кейс": "Donate Case", "Косметичний кейс": "Cosmetic Case",
     "Кейс валюти": "Currency Case", "Преміум Батлпас": "Premium Battlepass", "Premium Battlepass": "Premium Battlepass",
     "+1 рівень БП": "+1 BP Tier", "+2 рівні БП": "+2 BP Tiers", "+5 рівнів БП": "+5 BP Tiers", "+10 рівнів БП": "+10 BP Tiers", "+20 рівнів БП": "+20 BP Tiers",
+    // Сурвайвал (100)
+    "Миттєво +100 очків": "Instant +100 points", "Миттєво +200 очків": "Instant +200 points", "Миттєво +500 очків": "Instant +500 points", "Миттєво +1000 очків": "Instant +1000 points", "Миттєво +2000 очків": "Instant +2000 points",
+    // Гріф (75)
     "Миттєво +75 очків": "Instant +75 points", "Миттєво +150 очків": "Instant +150 points", "Миттєво +375 очків": "Instant +375 points", "Миттєво +750 очків": "Instant +750 points", "Миттєво +1500 очків": "Instant +1500 points",
     "Назавжди": "Permanent", "Термін: 3 місяці": "3 Months access", "Термін: 1 місяць": "1 Month access",
     "Випадковий донат-ранг": "Random donate rank", "Випадковий донат назавжди": "Random permanent rank",
@@ -194,6 +197,7 @@ const translations = {
     pointsTag: "+PUNKTE",
     "Привілеї": "Ränge", "Кейси": "Kisten", "Валюта": "Währung", "Батлпас": "Battlepass",
     "+1 рівень БП": "+1 BP Stufe", "+2 рівні БП": "+2 BP Stufen", "+5 рівнів БП": "+5 BP Stufen", "+10 рівнів БП": "+10 BP Stufen", "+20 рівнів БП": "+20 BP Stufen",
+    "Миттєво +100 очків": "Sofort +100 Punkte", "Миттєво +200 очків": "Sofort +200 Punkte", "Миттєво +500 очків": "Sofort +500 Punkte", "Миттєво +1000 очків": "Sofort +1000 Punkte", "Миттєво +2000 очків": "Sofort +2000 Punkte",
     "Миттєво +75 очків": "Sofort +75 Punkte", "Миттєво +150 очків": "Sofort +150 Punkte", "Миттєво +375 очків": "Sofort +375 Punkte", "Миттєво +750 очків": "Sofort +750 Punkte", "Миттєво +1500 очків": "Sofort +1500 Punkte",
     "Доступ на весь 1 сезон (2 міс.)": "Zugang für Saison 1 (2 Mon.)", "Доступ на 1 сезон (1 міс.)": "Zugang für Saison 1 (1 Mon.)"
   },
@@ -226,6 +230,7 @@ const translations = {
     pointsTag: "+POZIOMY",
     "Привілеї": "Rangi", "Кейси": "Skrzynie", "Валюта": "Waluta", "Батлпас": "Battlepass",
     "+1 рівень БП": "+1 Poziom BP", "+2 рівні БП": "+2 Poziomy BP", "+5 рівнів БП": "+5 Poziomów BP", "+10 рівнів БП": "+10 Poziomów BP", "+20 рівнів БП": "+20 Poziomów BP",
+    "Миттєво +100 очків": "Natychmiast +100 pkt", "Миттєво +200 очків": "Natychmiast +200 pkt", "Миттєво +500 очків": "Natychmiast +500 pkt", "Миттєво +1000 очків": "Natychmiast +1000 pkt", "Миттєво +2000 очків": "Natychmiast +2000 pkt",
     "Миттєво +75 очків": "Natychmiast +75 pkt", "Миттєво +150 очків": "Natychmiast +150 pkt", "Миттєво +375 очків": "Natychmiast +375 pkt", "Миттєво +750 очків": "Natychmiast +750 pkt", "Миттєво +1500 очків": "Natychmiast +1500 pkt",
     "Доступ на весь 1 сезон (2 міс.)": "Dostęp do 1 sezonu (2 mies.)", "Доступ на 1 сезон (1 міс.)": "Dostęp do 1 sezonu (1 mies.)"
   },
@@ -258,6 +263,7 @@ const translations = {
     pointsTag: "+NIVEAUX",
     "Привілеї": "Grades", "Кейси": "Caisses", "Валюта": "Monnaie", "Батлпас": "Battlepass",
     "+1 рівень БП": "+1 Niveau BP", "+2 рівні БП": "+2 Niveaux BP", "+5 рівнів БП": "+5 Niveaux BP", "+10 рівнів БП": "+10 Niveaux BP", "+20 рівнів БП": "+20 Niveaux BP",
+    "Миттєво +100 очків": "Instantané +100 pts", "Миттєво +200 очків": "Instantané +200 pts", "Миттєво +500 очків": "Instantané +500 pts", "Миттєво +1000 очків": "Instantané +1000 pts", "Миттєво +2000 очків": "Instantané +2000 pts",
     "Миттєво +75 очків": "Instantané +75 pts", "Миттєво +150 очків": "Instantané +150 pts", "Миттєво +375 очків": "Instantané +375 pts", "Миттєво +750 очків": "Instantané +750 pts", "Миттєво +1500 очків": "Instantané +1500 pts",
     "Доступ на весь 1 сезон (2 міс.)": "Accès saison 1 (2 mois)", "Доступ на 1 сезон (1 міс.)": "Accès saison 1 (1 mois)"
   },
@@ -290,6 +296,7 @@ const translations = {
     pointsTag: "+NIVELES",
     "Привілеї": "Rangos", "Кейси": "Cajas", "Валюта": "Moneda", "Батлпас": "Pase de Batalla",
     "+1 рівень БП": "+1 Nivel BP", "+2 рівні БП": "+2 Niveles BP", "+5 рівнів БП": "+5 Niveles BP", "+10 рівнів БП": "+10 Niveles BP", "+20 рівнів БП": "+20 Niveles BP",
+    "Миттєво +100 очків": "Instantáneo +100 pts", "Миттєво +200 очків": "Instantáneo +200 pts", "Миттєво +500 очків": "Instantáneo +500 pts", "Миттєво +1000 очків": "Instantáneo +1000 pts", "Миттєво +2000 очків": "Instantáneo +2000 pts",
     "Миттєво +75 очків": "Instantáneo +75 pts", "Миттєво +150 очків": "Instantáneo +150 pts", "Миттєво +375 очків": "Instantáneo +375 pts", "Миттєво +750 очків": "Instantáneo +750 pts", "Миттєво +1500 очків": "Instantáneo +1500 pts",
     "Доступ на весь 1 сезон (2 міс.)": "Acceso temporada 1 (2 meses)", "Доступ на 1 сезон (1 міс.)": "Acceso a temporada 1 (1 mes)"
   }
