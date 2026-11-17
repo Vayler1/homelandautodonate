@@ -1,4 +1,3 @@
-// Каталог товарів для Survival і Grief
 const catalogData = {
   survival: [
     {
@@ -42,11 +41,16 @@ const catalogData = {
       ]
     },
     {
-      id: "other",
-      name: "Інше",
-      icon: "fa-star",
+      id: "battlepass",
+      name: "Батлпас",
+      icon: "fa-award",
       items: [
-        { name: "Преміум Батлпас (1 сезон)", shortName: "Преміум Батлпас", tag: "period", desc: "Доступ на 1 сезон", icon: "fa-star", price: 119 }
+        { name: "Преміум Батлпас (1 сезон)", shortName: "Преміум Батлпас", tag: "period", desc: "Доступ на весь 1 сезон (2 міс.)", icon: "fa-star", price: 119 },
+        { name: "1 рівень БП (75 очків)", shortName: "+1 рівень БП", tag: "points", desc: "Миттєво +75 очків", icon: "fa-angles-up", price: 29 },
+        { name: "2 рівні БП (150 очків)", shortName: "+2 рівні БП", tag: "points", desc: "Миттєво +150 очків", icon: "fa-angles-up", price: 55 },
+        { name: "5 рівнів БП (375 очків)", shortName: "+5 рівнів БП", tag: "points", desc: "Миттєво +375 очків", icon: "fa-angles-up", price: 129 },
+        { name: "10 рівнів БП (750 очків)", shortName: "+10 рівнів БП", tag: "points", desc: "Миттєво +750 очків", icon: "fa-angles-up", price: 249 },
+        { name: "20 рівнів БП (1500 очків)", shortName: "+20 рівнів БП", tag: "points", desc: "Миттєво +1500 очків", icon: "fa-angles-up", price: 469 }
       ]
     }
   ],
@@ -69,18 +73,29 @@ const catalogData = {
       ]
     },
     {
-      id: "cases_other",
-      name: "Кейси та Пропуски",
+      id: "cases",
+      name: "Кейси",
       icon: "fa-box-open",
       items: [
-        { name: "Донат-кейс", shortName: "Донат-кейс", tag: "forever", desc: "Випадковий донат назавжди", icon: "fa-cube", price: 129 },
-        { name: "Premium Battlepass (1 сезон)", shortName: "Premium Battlepass", tag: "period", desc: "Доступ на 1 сезон (1 міс.)", icon: "fa-star", price: 109 }
+        { name: "Донат-кейс", shortName: "Донат-кейс", tag: "forever", desc: "Випадковий донат назавжди", icon: "fa-cube", price: 129 }
+      ]
+    },
+    {
+      id: "battlepass",
+      name: "Батлпас",
+      icon: "fa-award",
+      items: [
+        { name: "Premium Battlepass (1 сезон)", shortName: "Premium Battlepass", tag: "period", desc: "Доступ на 1 сезон (1 міс.)", icon: "fa-star", price: 109 },
+        { name: "1 рівень БП (75 очків)", shortName: "+1 рівень БП", tag: "points", desc: "Миттєво +75 очків", icon: "fa-angles-up", price: 19 },
+        { name: "2 рівні БП (150 очків)", shortName: "+2 рівні БП", tag: "points", desc: "Миттєво +150 очків", icon: "fa-angles-up", price: 35 },
+        { name: "5 рівнів БП (375 очків)", shortName: "+5 рівнів БП", tag: "points", desc: "Миттєво +375 очків", icon: "fa-angles-up", price: 79 },
+        { name: "10 рівнів БП (750 очків)", shortName: "+10 рівнів БП", tag: "points", desc: "Миттєво +750 очків", icon: "fa-angles-up", price: 149 },
+        { name: "20 рівнів БП (1500 очків)", shortName: "+20 рівнів БП", tag: "points", desc: "Миттєво +1500 очків", icon: "fa-angles-up", price: 279 }
       ]
     }
   ]
 };
 
-// Словник перекладів інтерфейсу та товарів
 const translations = {
   uk: {
     backBtn: "На головну",
@@ -107,7 +122,8 @@ const translations = {
     disclaimer: "Здійснюючи платіж, ви купуєте право доступу до авторського цифрового контенту відповідно до публічного агентського договору та правил сервера Homeland. Кошти поверненню не підлягають.",
     foreverTag: "НАЗАВЖДИ",
     periodTag: "ТЕРМІН",
-    wipeTag: "ДО ВАЙПУ"
+    wipeTag: "ДО ВАЙПУ",
+    pointsTag: "+ОЧКИ"
   },
   en: {
     backBtn: "Home",
@@ -135,19 +151,19 @@ const translations = {
     foreverTag: "PERMANENT",
     periodTag: "LIMITED",
     wipeTag: "TILL WIPE",
-    // Категорії
-    "Привілеї": "Ranks", "Кейси": "Cases", "Валюта": "Currency", "Інше": "Other", "Кейси та Пропуски": "Cases & Passes",
-    // Товари
+    pointsTag: "+TIERS",
+    "Привілеї": "Ranks", "Кейси": "Cases", "Валюта": "Currency", "Батлпас": "Battlepass",
     "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Sponsor",
     "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Voievoda",
     "Донат кейс": "Donate Case", "Донат-кейс": "Donate Case", "Косметичний кейс": "Cosmetic Case",
     "Кейс валюти": "Currency Case", "Преміум Батлпас": "Premium Battlepass", "Premium Battlepass": "Premium Battlepass",
-    // Описи
+    "+1 рівень БП": "+1 BP Tier", "+2 рівні БП": "+2 BP Tiers", "+5 рівнів БП": "+5 BP Tiers", "+10 рівнів БП": "+10 BP Tiers", "+20 рівнів БП": "+20 BP Tiers",
+    "Миттєво +75 очків": "Instant +75 points", "Миттєво +150 очків": "Instant +150 points", "Миттєво +375 очків": "Instant +375 points", "Миттєво +750 очків": "Instant +750 points", "Миттєво +1500 очків": "Instant +1500 points",
     "Назавжди": "Permanent", "Термін: 3 місяці": "3 Months access", "Термін: 1 місяць": "1 Month access",
     "Випадковий донат-ранг": "Random donate rank", "Випадковий донат назавжди": "Random permanent rank",
     "1 шт. (Назавжди)": "1 pc. (Permanent)", "5 шт.": "Bundle: 5 pcs.", "10 шт.": "Large: 10 pcs.", "20 шт.": "Mega: 20 pcs.",
     "1 шт. (до вайпу)": "1 pc. (till wipe)", "5 шт. (до вайпу)": "5 pcs. (till wipe)", "10 шт. (до вайпу)": "10 pcs. (till wipe)", "20 шт. (до вайпу)": "20 pcs. (till wipe)",
-    "Доступ на 1 сезон": "Full Season 1 access", "Доступ на 1 сезон (1 міс.)": "Season 1 access (1 mo.)"
+    "Доступ на весь 1 сезон (2 міс.)": "Full Season 1 access (2 mo.)", "Доступ на 1 сезон (1 міс.)": "Season 1 access (1 mo.)"
   },
   de: {
     backBtn: "Zur Startseite",
@@ -175,16 +191,11 @@ const translations = {
     foreverTag: "DAUERHAFT",
     periodTag: "ZEITLICH",
     wipeTag: "BIS WIPE",
-    "Привілеї": "Ränge", "Кейси": "Kisten", "Валюта": "Währung", "Інше": "Sonstiges", "Кейси та Пропуски": "Kisten & Pässe",
-    "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Sponsor",
-    "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Voievoda",
-    "Донат кейс": "Donate Kiste", "Донат-кейс": "Donate Kiste", "Косметичний кейс": "Kosmetische Kiste",
-    "Кейс валюти": "Währungskiste", "Преміум Батлпас": "Premium Battlepass", "Premium Battlepass": "Premium Battlepass",
-    "Назавжди": "Dauerhaft", "Термін: 3 місяці": "3 Monate Laufzeit", "Термін: 1 місяць": "1 Monat Laufzeit",
-    "Випадковий донат-ранг": "Zufälliger Rang", "Випадковий донат назавжди": "Zufälliger Rang dauerhaft",
-    "1 шт. (Назавжди)": "1 Stk. (Dauerhaft)", "5 шт.": "Paket: 5 Stk.", "10 шт.": "Großes Paket: 10 Stk.", "20 шт.": "Maxi: 20 Stk.",
-    "1 шт. (до вайпу)": "1 Stk. (bis zum Wipe)", "5 шт. (до вайпу)": "5 Stk. (bis zum Wipe)", "10 шт. (до вайпу)": "10 Stk. (bis zum Wipe)", "20 шт. (до вайпу)": "20 Stk. (bis zum Wipe)",
-    "Доступ на 1 сезон": "Zugang für Saison 1", "Доступ на 1 сезон (1 міс.)": "Zugang für Saison 1 (1 Mon.)"
+    pointsTag: "+PUNKTE",
+    "Привілеї": "Ränge", "Кейси": "Kisten", "Валюта": "Währung", "Батлпас": "Battlepass",
+    "+1 рівень БП": "+1 BP Stufe", "+2 рівні БП": "+2 BP Stufen", "+5 рівнів БП": "+5 BP Stufen", "+10 рівнів БП": "+10 BP Stufen", "+20 рівнів БП": "+20 BP Stufen",
+    "Миттєво +75 очків": "Sofort +75 Punkte", "Миттєво +150 очків": "Sofort +150 Punkte", "Миттєво +375 очків": "Sofort +375 Punkte", "Миттєво +750 очків": "Sofort +750 Punkte", "Миттєво +1500 очків": "Sofort +1500 Punkte",
+    "Доступ на весь 1 сезон (2 міс.)": "Zugang für Saison 1 (2 Mon.)", "Доступ на 1 сезон (1 міс.)": "Zugang für Saison 1 (1 Mon.)"
   },
   pl: {
     backBtn: "Na stronę główną",
@@ -212,16 +223,11 @@ const translations = {
     foreverTag: "NA ZAWSZE",
     periodTag: "OKRES",
     wipeTag: "DO WIPE'A",
-    "Привілеї": "Rangi", "Кейси": "Skrzynie", "Валюта": "Waluta", "Інше": "Inne", "Кейси та Пропуски": "Skrzynie i Przepustki",
-    "Козак": "Kozak", "Сотник": "Setnik", "Полковник": "Pułkownik", "Гетьман": "Hetman", "Спонсор": "Sponsor",
-    "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Wojewoda",
-    "Донат кейс": "Donate Skrzynia", "Донат-кейс": "Donate Skrzynia", "Косметичний кейс": "Skrzynia Kosmetyczna",
-    "Кейс валюти": "Skrzynia Waluty", "Преміум Батлпас": "Premium Battlepass", "Premium Battlepass": "Premium Battlepass",
-    "Назавжди": "Na zawsze", "Термін: 3 місяці": "Okres: 3 miesiące", "Термін: 1 місяць": "Okres: 1 miesiąc",
-    "Випадковий донат-ранг": "Losowa ranga donate", "Випадковий донат назавжди": "Losowa ranga na zawsze",
-    "1 шт. (Назавжди)": "1 szt. (Na zawsze)", "5 шт.": "Zestaw: 5 szt.", "10 шт.": "Duży zestaw: 10 szt.", "20 шт.": "Mega: 20 szt.",
-    "1 шт. (до вайпу)": "1 szt. (do wipe'a)", "5 шт. (до вайпу)": "5 szt. (do wipe'a)", "10 шт. (до вайпу)": "10 szt. (do wipe'a)", "20 шт. (до вайпу)": "20 szt. (do wipe'a)",
-    "Доступ на 1 сезон": "Dostęp do całego 1 sezonu", "Доступ на 1 сезон (1 міс.)": "Dostęp do 1 sezonu (1 mies.)"
+    pointsTag: "+POZIOMY",
+    "Привілеї": "Rangi", "Кейси": "Skrzynie", "Валюта": "Waluta", "Батлпас": "Battlepass",
+    "+1 рівень БП": "+1 Poziom BP", "+2 рівні БП": "+2 Poziomy BP", "+5 рівнів БП": "+5 Poziomów BP", "+10 рівнів БП": "+10 Poziomów BP", "+20 рівнів БП": "+20 Poziomów BP",
+    "Миттєво +75 очків": "Natychmiast +75 pkt", "Миттєво +150 очків": "Natychmiast +150 pkt", "Миттєво +375 очків": "Natychmiast +375 pkt", "Миттєво +750 очків": "Natychmiast +750 pkt", "Миттєво +1500 очків": "Natychmiast +1500 pkt",
+    "Доступ на весь 1 сезон (2 міс.)": "Dostęp do 1 sezonu (2 mies.)", "Доступ на 1 сезон (1 міс.)": "Dostęp do 1 sezonu (1 mies.)"
   },
   fr: {
     backBtn: "Accueil",
@@ -249,16 +255,11 @@ const translations = {
     foreverTag: "À VIE",
     periodTag: "TEMPORAIRE",
     wipeTag: "JUSQU'AU WIPE",
-    "Привілеї": "Grades", "Кейси": "Caisses", "Валюта": "Monnaie", "Інше": "Autre", "Кейси та Пропуски": "Caisses & Pass",
-    "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Sponsor",
-    "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Voïvode",
-    "Донат кейс": "Caisse Donate", "Донат-кейс": "Caisse Donate", "Косметичний кейс": "Caisse Cosmétique",
-    "Кейс валюти": "Caisse de Monnaie", "Преміум Батлпас": "Battlepass Premium", "Premium Battlepass": "Battlepass Premium",
-    "Назавжди": "À vie", "Термін: 3 місяці": "Période : 3 mois", "Термін: 1 місяць": "Période : 1 mois",
-    "Випадковий донат-ранг": "Grade donateur aléatoire", "Випадковий донат назавжди": "Grade aléatoire à vie",
-    "1 шт. (Назавжди)": "1 pc. (À vie)", "5 шт.": "Pack : 5 pcs.", "10 шт.": "Grand pack : 10 pcs.", "20 шт.": "Méga : 20 pcs.",
-    "1 шт. (до вайпу)": "1 pc. (jusqu'au wipe)", "5 шт. (до вайпу)": "5 pcs. (jusqu'au wipe)", "10 шт. (до вайпу)": "10 pcs. (jusqu'au wipe)", "20 шт. (до вайпу)": "20 pcs. (jusqu'au wipe)",
-    "Доступ на 1 сезон": "Accès pour la saison 1", "Доступ на 1 сезон (1 міс.)": "Accès saison 1 (1 mois)"
+    pointsTag: "+NIVEAUX",
+    "Привілеї": "Grades", "Кейси": "Caisses", "Валюта": "Monnaie", "Батлпас": "Battlepass",
+    "+1 рівень БП": "+1 Niveau BP", "+2 рівні БП": "+2 Niveaux BP", "+5 рівнів БП": "+5 Niveaux BP", "+10 рівнів БП": "+10 Niveaux BP", "+20 рівнів БП": "+20 Niveaux BP",
+    "Миттєво +75 очків": "Instantané +75 pts", "Миттєво +150 очків": "Instantané +150 pts", "Миттєво +375 очків": "Instantané +375 pts", "Миттєво +750 очків": "Instantané +750 pts", "Миттєво +1500 очків": "Instantané +1500 pts",
+    "Доступ на весь 1 сезон (2 міс.)": "Accès saison 1 (2 mois)", "Доступ на 1 сезон (1 міс.)": "Accès saison 1 (1 mois)"
   },
   es: {
     backBtn: "Inicio",
@@ -286,16 +287,11 @@ const translations = {
     foreverTag: "PERMANENTE",
     periodTag: "TEMPORAL",
     wipeTag: "HASTA EL WIPE",
-    "Привілеї": "Rangos", "Кейси": "Cajas", "Валюта": "Moneda", "Інше": "Otro", "Кейси та Пропуски": "Cajas y Pases",
-    "Козак": "Kozak", "Сотник": "Sotnyk", "Полковник": "Polkovnyk", "Гетьман": "Hetman", "Спонсор": "Patrocinador",
-    "Джура": "Dzhura", "Пластун": "Plastun", "Характерник": "Kharakternyk", "Отаман": "Otaman", "Воєвода": "Voivoda",
-    "Донат кейс": "Caja Donate", "Донат-кейс": "Caja Donate", "Косметичний кейс": "Caja Cosmética",
-    "Кейс валюти": "Caja de Moneda", "Преміум Батлпас": "Pase de Batalla Premium", "Premium Battlepass": "Pase de Batalla Premium",
-    "Назавжди": "Permanente", "Термін: 3 місяці": "Período: 3 meses", "Термін: 1 місяць": "Período: 1 mes",
-    "Випадковий донат-ранг": "Rango de donación aleatorio", "Випадковий донат назавжди": "Rango aleatorio permanente",
-    "1 шт. (Назавжди)": "1 ud. (Permanente)", "5 шт.": "Paquete: 5 uds.", "10 шт.": "Paquete grande: 10 uds.", "20 шт.": "Mega: 20 uds.",
-    "1 шт. (до вайпу)": "1 ud. (hasta el wipe)", "5 шт. (до вайпу)": "5 uds. (hasta el wipe)", "10 шт. (до вайпу)": "10 uds. (hasta el wipe)", "20 шт. (до вайпу)": "20 uds. (hasta el wipe)",
-    "Доступ на 1 сезон": "Acceso a temporada 1", "Доступ на 1 сезон (1 міс.)": "Acceso a temporada 1 (1 mes)"
+    pointsTag: "+NIVELES",
+    "Привілеї": "Rangos", "Кейси": "Cajas", "Валюта": "Moneda", "Батлпас": "Pase de Batalla",
+    "+1 рівень БП": "+1 Nivel BP", "+2 рівні БП": "+2 Niveles BP", "+5 рівнів БП": "+5 Niveles BP", "+10 рівнів БП": "+10 Niveles BP", "+20 рівнів БП": "+20 Niveles BP",
+    "Миттєво +75 очків": "Instantáneo +75 pts", "Миттєво +150 очків": "Instantáneo +150 pts", "Миттєво +375 очків": "Instantáneo +375 pts", "Миттєво +750 очків": "Instantáneo +750 pts", "Миттєво +1500 очків": "Instantáneo +1500 pts",
+    "Доступ на весь 1 сезон (2 міс.)": "Acceso temporada 1 (2 meses)", "Доступ на 1 сезон (1 міс.)": "Acceso a temporada 1 (1 mes)"
   }
 };
 
@@ -316,7 +312,6 @@ function t(key) {
   return key;
 }
 
-// Застосування перекладу до розмітки
 function applyTranslations() {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -385,8 +380,8 @@ function renderProducts() {
     let tagKey = "foreverTag";
     if (item.tag === "period") { tagClass = "tag-period"; tagKey = "periodTag"; }
     else if (item.tag === "wipe") { tagClass = "tag-wipe"; tagKey = "wipeTag"; }
+    else if (item.tag === "points") { tagClass = "tag-period"; tagKey = "pointsTag"; }
 
-    // Локалізація назви та опису
     const localizedTitle = t(item.shortName);
     const localizedDesc = t(item.desc);
 
@@ -495,7 +490,6 @@ function generateLink() {
   const mBtn = document.getElementById("mPayBtn");
   if (mBtn) mBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
 
-  // В Donatello передаємо мітку [server] та оригінальну назву товару для плагіна
   const serverComment = `[${currentServer}] ${selectedProduct.name}`;
   const donatelloLang = currentLang === 'uk' ? 'ua' : (currentLang === 'pl' ? 'pl' : 'en');
 
@@ -531,6 +525,5 @@ window.addEventListener("click", (e) => {
   if (e.target === modal) modal.classList.remove("open");
 });
 
-// Старт
 applyTranslations();
 switchServer('survival');
