@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <!-- Шапка сайту -->
+  <!-- Шапка -->
   <header class="top-nav">
     <div class="top-nav-inner">
       <a href="https://homeland.pp.ua/" class="nav-logo">
@@ -57,30 +57,25 @@
     
     <div class="store-main">
       
-      <!-- ВЕЛИКИЙ ВИБІР РЕЖИМУ НА СТАРТІ СТОРІНКИ -->
+      <!-- ВИБІР РЕЖИМУ НА СТАРТІ -->
       <section class="mode-select-section">
         <div class="section-title-wrap">
           <span class="step-badge">1</span>
-          <div>
-            <h2 class="step-title" data-i18n="selectServerTitle">Оберіть режим гри</h2>
-            <p class="step-sub" data-i18n="selectServerDesc">Товари та привілеї залежать від обраного сервера</p>
-          </div>
+          <h2 class="step-title" data-i18n="selectServerTitle">Оберіть режим гри</h2>
         </div>
 
         <div class="server-cards-grid">
           
-          <!-- Блок Survival -->
+          <!-- Survival -->
           <div class="server-card active" id="card-survival" onclick="switchServer('survival')">
-            <div class="server-card-glow"></div>
             <div class="server-card-top">
               <div class="server-icon-box survival-icon">
-                <i class="fa-solid fa-campground"></i>
+                <i class="fa-solid fa-map-location-dot"></i>
               </div>
-              <span class="server-status-pill"><span class="status-dot"></span> Online</span>
             </div>
             <div class="server-card-info">
               <h3 class="server-name">Survival</h3>
-              <p class="server-desc" data-i18n="survivalDesc">Класичне ванільне виживання, економіка та дружня спільнота</p>
+              <p class="server-desc" data-i18n="survivalDesc">Військово-політичне виживання на мапі України: міста, економіка, альянси та війни націй</p>
             </div>
             <div class="server-select-indicator">
               <i class="fa-solid fa-circle-check"></i>
@@ -88,18 +83,16 @@
             </div>
           </div>
 
-          <!-- Блок Grief -->
+          <!-- Grief -->
           <div class="server-card" id="card-grief" onclick="switchServer('grief')">
-            <div class="server-card-glow"></div>
             <div class="server-card-top">
               <div class="server-icon-box grief-icon">
                 <i class="fa-solid fa-skull-crossbones"></i>
               </div>
-              <span class="server-status-pill"><span class="status-dot"></span> Online</span>
             </div>
             <div class="server-card-info">
               <h3 class="server-name">Grief</h3>
-              <p class="server-desc" data-i18n="griefDesc">Гріф-сервер, привати блоками, битви за ресурси та рейди</p>
+              <p class="server-desc" data-i18n="griefDesc">Гріф-сервер: привати блоками, PvP-битви за ресурси, клани та рейди</p>
             </div>
             <div class="server-select-indicator">
               <i class="fa-solid fa-circle-check"></i>
@@ -110,7 +103,7 @@
         </div>
       </section>
 
-      <!-- КРОК 2: Введення нікнейму -->
+      <!-- КРОК 2: Нікнейм -->
       <section class="panel-card" id="nickSection">
         <div class="section-title-wrap">
           <span class="step-badge">2</span>
@@ -131,7 +124,7 @@
         </div>
       </section>
 
-      <!-- КРОК 3: Вибір товару -->
+      <!-- КРОК 3: Вибір послуги -->
       <section class="panel-card">
         <div class="section-title-wrap">
           <span class="step-badge">3</span>
@@ -141,10 +134,7 @@
           </div>
         </div>
 
-        <!-- Горизонтальні таби категорій -->
         <div class="category-tabs" id="categoryTabs"></div>
-
-        <!-- Сітка товарів -->
         <div class="products-grid" id="productsGrid"></div>
       </section>
 
@@ -173,7 +163,7 @@
         </div>
 
         <button id="submitBtn" onclick="generateLink()" disabled>
-          <span id="submitBtnText" data-i18n="payBtn">Оплатити через Donatello</span>
+          <span id="submitBtnText" data-i18n="payBtn">Оплатити</span>
           <i class="fa-solid fa-arrow-right"></i>
         </button>
 
@@ -196,14 +186,14 @@
 
   </main>
 
-  <!-- МОБІЛЬНИЙ ПЛАВАЮЧИЙ БАР ОПЛАТИ (ДЛЯ ТЕЛЕФОНІВ) -->
+  <!-- МОБІЛЬНИЙ БАР ОПЛАТИ -->
   <div class="mobile-sticky-bar" id="mobileBar">
     <div class="mobile-bar-info">
       <span class="m-product-name" id="mProductName">—</span>
       <span class="m-price" id="mProductPrice">0 ₴</span>
     </div>
     <button class="mobile-pay-btn" id="mPayBtn" onclick="onMobilePayClick()">
-      <span id="mPayBtnText" data-i18n="payBtnShort">Оплатити</span>
+      <span id="mPayBtnText" data-i18n="payBtn">Оплатити</span>
       <i class="fa-solid fa-arrow-right"></i>
     </button>
   </div>
