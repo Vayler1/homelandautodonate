@@ -1,3 +1,4 @@
+// Каталог послуг для обох серверів
 const catalogData = {
   survival: [
     {
@@ -79,49 +80,190 @@ const catalogData = {
   ]
 };
 
+// Словник перекладів
 const translations = {
   uk: {
     backBtn: "На головну",
-    step1: "Вкажіть ваш нікнейм",
-    step1Desc: "Товар буде автоматично виданий на цей ігровий обліковий запис",
-    step2: "Виберіть товар",
-    step2Desc: "Оберіть послугу з каталогу обраного сервера",
-    warning: "<i class='fa-solid fa-circle-info'></i> <span>Гравцям <strong>Bedrock</strong> обов'язково вказувати крапку <code>.</code> перед нікнеймом.</span>",
-    placeholder: "Ваш нікнейм...",
+    modalTitle: "Оберіть мову",
+    selectServerTitle: "Оберіть режим гри",
+    selectServerDesc: "Товари та привілеї залежать від обраного сервера",
+    survivalDesc: "Класичне ванільне виживання, економіка та дружня спільнота",
+    griefDesc: "Гріф-сервер, привати блоками, битви за ресурси та рейди",
+    selectedLabel: "Обрано",
+    enterNickTitle: "Вкажіть ігровий нікнейм",
+    enterNickDesc: "На цей обліковий запис надійде придбана послуга",
+    nickPlaceholder: "Ваш нікнейм у грі...",
+    bedrockNotice: "Гравцям <strong>Bedrock</strong> обов'язково писати крапку <code>.</code> перед ніком!",
+    chooseProductTitle: "Оберіть послугу",
+    chooseProductDesc: "Натисніть на картку товару для оформлення",
     orderSummary: "Деталі замовлення",
-    emptyHint: "Оберіть товар для оплати",
+    emptyOrder: "Оберіть товар у списку",
     totalLabel: "До сплати:",
     payBtn: "Оплатити через Donatello",
+    payBtnShort: "Оплатити",
     loading: "Створення посилання...",
     recipient: "Нікнейм:",
     serverLabel: "Сервер:",
+    legalItem1: "Офіційна оплата цифрового контенту через ТОВ «Донателло»",
+    legalItem2: "Повна сплата податків (ПДФО 18% та ВЗ 5%) податковим агентом",
+    disclaimer: "Здійснюючи платіж, ви купуєте право доступу до авторського цифрового контенту відповідно до публічного агентського договору та правил сервера Homeland. Кошти поверненню не підлягають.",
     foreverTag: "НАЗАВЖДИ",
     periodTag: "ТЕРМІН",
     wipeTag: "ДО ВАЙПУ"
   },
   en: {
-    backBtn: "Main site",
-    step1: "Enter your nickname",
-    step1Desc: "The item will be automatically credited to this in-game account",
-    step2: "Select product",
-    step2Desc: "Choose a service from the catalog of the selected server",
-    warning: "<i class='fa-solid fa-circle-info'></i> <span><strong>Bedrock</strong> players must include a dot <code>.</code> before nickname.</span>",
-    placeholder: "Your nickname...",
+    backBtn: "Home",
+    modalTitle: "Select Language",
+    selectServerTitle: "Choose Game Mode",
+    selectServerDesc: "Products and ranks depend on the selected server",
+    survivalDesc: "Classic vanilla survival, player economy, and friendly community",
+    griefDesc: "Grief server, protection blocks, raids, and PvP battles",
+    selectedLabel: "Selected",
+    enterNickTitle: "Enter In-Game Nickname",
+    enterNickDesc: "The purchased item will be credited to this account",
+    nickPlaceholder: "Your in-game nickname...",
+    bedrockNotice: "<strong>Bedrock</strong> players must include a dot <code>.</code> before nickname!",
+    chooseProductTitle: "Select Product",
+    chooseProductDesc: "Click a product card to proceed to checkout",
     orderSummary: "Order Details",
-    emptyHint: "Select a product to continue",
+    emptyOrder: "Select a product from the list",
     totalLabel: "Total:",
-    payBtn: "Pay via Donatello",
+    payBtn: "Pay with Donatello",
+    payBtnShort: "Pay",
     loading: "Generating link...",
-    recipient: "Nickname:",
+    recipient: "Recipient:",
     serverLabel: "Server:",
+    legalItem1: "Official digital content payment processed by Donatello LLC",
+    legalItem2: "All taxes (18% PIT and 5% Military levy) paid by tax agent",
+    disclaimer: "By completing the payment, you purchase access to digital game content under the public agency agreement and Homeland server rules. Funds are non-refundable.",
     foreverTag: "PERMANENT",
-    periodTag: "PERIOD",
+    periodTag: "LIMITED",
     wipeTag: "TILL WIPE",
     "Привілеї": "Ranks", "Кейси": "Cases", "Валюта": "Currency", "Інше": "Other", "Кейси та Пропуски": "Cases & Passes"
+  },
+  de: {
+    backBtn: "Zur Startseite",
+    modalTitle: "Sprache wählen",
+    selectServerTitle: "Spielmodus wählen",
+    selectServerDesc: "Produkte und Ränge hängen vom gewählten Server ab",
+    survivalDesc: "Klassisches Vanilla-Survival, Wirtschaft und freundliche Community",
+    griefDesc: "Grief-Server mit Schutzblöcken, Ressourcen-Kämpfen und Raids",
+    selectedLabel: "Ausgewählt",
+    enterNickTitle: "Spielernamen eingeben",
+    enterNickDesc: "Der Artikel wird diesem Account gutgeschrieben",
+    nickPlaceholder: "Dein Nickname im Spiel...",
+    bedrockNotice: "<strong>Bedrock</strong>-Spieler müssen einen <code>.</code> voranstellen!",
+    chooseProductTitle: "Produkt wählen",
+    chooseProductDesc: "Klicke auf eine Karte, um fortzufahren",
+    orderSummary: "Bestellübersicht",
+    emptyOrder: "Wähle ein Produkt aus der Liste",
+    totalLabel: "Gesamtbetrag:",
+    payBtn: "Mit Donatello bezahlen",
+    payBtnShort: "Bezahlen",
+    loading: "Link wird generiert...",
+    recipient: "Empfänger:",
+    serverLabel: "Server:",
+    legalItem1: "Offizielle Zahlung für digitale Inhalte über Donatello LLC",
+    legalItem2: "Vollständige Abführung aller Steuern durch den Steueragenten",
+    disclaimer: "Mit der Zahlung erwerben Sie das Recht auf digitalen Inhalt gemäß Agenturvertrag und Serverregeln. Eine Rückerstattung ist ausgeschlossen.",
+    foreverTag: "DAUERHAFT",
+    periodTag: "ZEITLICH",
+    wipeTag: "BIS WIPE",
+    "Привілеї": "Ränge", "Кейси": "Kisten", "Валюта": "Währung", "Інше": "Sonstiges", "Кейси та Пропуски": "Kisten & Pässe"
+  },
+  pl: {
+    backBtn: "Na stronę główną",
+    modalTitle: "Wybierz język",
+    selectServerTitle: "Wybierz tryb gry",
+    selectServerDesc: "Przedmioty i rangi zależą od wybranego serwera",
+    survivalDesc: "Klasyczny vanilla survival, ekonomia i przyjazna społeczność",
+    griefDesc: "Serwer grief z blokami ochrony, rajdami i walkami o surowce",
+    selectedLabel: "Wybrano",
+    enterNickTitle: "Wpisz swój nick",
+    enterNickDesc: "Zakupiony przedmiot zostanie przypisany do tego konta",
+    nickPlaceholder: "Twój nick w grze...",
+    bedrockNotice: "Gracze <strong>Bedrock</strong> muszą postawić kropkę <code>.</code> przed nickiem!",
+    chooseProductTitle: "Wybierz usługę",
+    chooseProductDesc: "Kliknij kartę produktu, aby przejść do płatności",
+    orderSummary: "Podsumowanie zamówienia",
+    emptyOrder: "Wybierz produkt z listy",
+    totalLabel: "Do zapłaty:",
+    payBtn: "Zapłać przez Donatello",
+    payBtnShort: "Zapłać",
+    loading: "Tworzenie linku...",
+    recipient: "Odbiorca:",
+    serverLabel: "Serwer:",
+    legalItem1: "Oficjalna płatność za treści cyfrowe przez Donatello Sp. z o.o.",
+    legalItem2: "Wszystkie podatki są rozliczane automatycznie przez płatnika",
+    disclaimer: "Dokonując płatności, nabywasz prawo dostępu do treści cyfrowych zgodnie z regulaminem i umową agencyjną. Środki nie podlegają zwrotowi.",
+    foreverTag: "NA ZAWSZE",
+    periodTag: "OKRES",
+    wipeTag: "DO WIPE'A",
+    "Привілеї": "Rangi", "Кейси": "Skrzynie", "Валюта": "Waluta", "Інше": "Inne", "Кейси та Пропуски": "Skrzynie i Przepustki"
+  },
+  fr: {
+    backBtn: "Accueil",
+    modalTitle: "Choisir la langue",
+    selectServerTitle: "Choisissez le mode",
+    selectServerDesc: "Les articles et grades dépendent du serveur sélectionné",
+    survivalDesc: "Survie vanilla classique, économie et communauté chaleureuse",
+    griefDesc: "Serveur Grief avec blocs de protection, combats et pillages",
+    selectedLabel: "Sélectionné",
+    enterNickTitle: "Entrez votre pseudo",
+    enterNickDesc: "Le produit sera crédité sur ce compte de jeu",
+    nickPlaceholder: "Votre pseudo en jeu...",
+    bedrockNotice: "Les joueurs <strong>Bedrock</strong> doivent mettre un point <code>.</code> !",
+    chooseProductTitle: "Sélectionnez un article",
+    chooseProductDesc: "Cliquez sur une carte pour commander",
+    orderSummary: "Détails de la commande",
+    emptyOrder: "Sélectionnez un article dans la liste",
+    totalLabel: "À payer :",
+    payBtn: "Payer avec Donatello",
+    payBtnShort: "Payer",
+    loading: "Création du lien...",
+    recipient: "Destinataire :",
+    serverLabel: "Serveur :",
+    legalItem1: "Paiement officiel de contenu numérique via Donatello LLC",
+    legalItem2: "Tous les impôts sont acquittés par l'agent fiscal officiel",
+    disclaimer: "En payant, vous achetez un accès à du contenu numérique conformément aux règles et au contrat d'agence. Les fonds ne sont pas remboursables.",
+    foreverTag: "À VIE",
+    periodTag: "TEMPORAIRE",
+    wipeTag: "JUSQU'AU WIPE",
+    "Привілеї": "Grades", "Кейси": "Caisses", "Валюта": "Monnaie", "Інше": "Autre", "Кейси та Пропуски": "Caisses & Pass"
+  },
+  es: {
+    backBtn: "Inicio",
+    modalTitle: "Seleccionar idioma",
+    selectServerTitle: "Elige el modo de juego",
+    selectServerDesc: "Los productos dependen del servidor seleccionado",
+    survivalDesc: "Supervivencia vainilla clásica, economía y comunidad amigable",
+    griefDesc: "Servidor grief con bloques de protección, saqueos y batallas",
+    selectedLabel: "Seleccionado",
+    enterNickTitle: "Ingresa tu apodo",
+    enterNickDesc: "El artículo comprado se acreditará a esta cuenta",
+    nickPlaceholder: "Tu apodo en el juego...",
+    bedrockNotice: "¡Jugadores de <strong>Bedrock</strong> deben poner un punto <code>.</code> antes del nick!",
+    chooseProductTitle: "Elige el servicio",
+    chooseProductDesc: "Haz clic en una tarjeta para proceder",
+    orderSummary: "Detalles del pedido",
+    emptyOrder: "Selecciona un producto de la lista",
+    totalLabel: "Total:",
+    payBtn: "Pagar con Donatello",
+    payBtnShort: "Pagar",
+    loading: "Generando enlace...",
+    recipient: "Destinatario:",
+    serverLabel: "Servidor:",
+    legalItem1: "Pago oficial de contenido digital a través de Donatello LLC",
+    legalItem2: "Impuestos liquidados en su totalidad por el agente fiscal",
+    disclaimer: "Al pagar, adquiere acceso a contenido digital de acuerdo con el contrato y las normas. Los fondos no son reembolsables.",
+    foreverTag: "PERMANENTE",
+    periodTag: "TEMPORAL",
+    wipeTag: "HASTA EL WIPE",
+    "Привілеї": "Rangos", "Кейси": "Cajas", "Валюта": "Moneda", "Інше": "Otro", "Кейси та Пропуски": "Cajas y Pases"
   }
 };
 
-let currentLang = 'uk';
+let currentLang = localStorage.getItem('homeland_store_lang') || 'uk';
 let currentServer = 'survival';
 let currentCategory = 'ranks';
 let selectedProduct = null;
@@ -138,10 +280,26 @@ function t(key) {
   return key;
 }
 
+// Застосування перекладів до всіх статичних елементів
+function applyTranslations() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    el.innerHTML = t(key);
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    el.placeholder = t(key);
+  });
+
+  const langLabel = document.getElementById("currentLangLabel");
+  if (langLabel) langLabel.innerText = currentLang.toUpperCase();
+}
+
 function switchServer(srv) {
   currentServer = srv;
-  document.getElementById("btn-server-survival").classList.toggle("active", srv === 'survival');
-  document.getElementById("btn-server-grief").classList.toggle("active", srv === 'grief');
+  document.getElementById("card-survival").classList.toggle("active", srv === 'survival');
+  document.getElementById("card-grief").classList.toggle("active", srv === 'grief');
   
   selectedProduct = null;
   currentCategory = catalogData[currentServer][0].id;
@@ -224,30 +382,64 @@ function updateCheckoutSidebar() {
   const orderContent = document.getElementById("orderContent");
   const submitBtn = document.getElementById("submitBtn");
 
+  const mobileBar = document.getElementById("mobileBar");
+  const mProductName = document.getElementById("mProductName");
+  const mProductPrice = document.getElementById("mProductPrice");
+
   if (selectedProduct) {
+    const converted = getConvertedPrice(selectedProduct.price);
     totalPriceVal.innerText = `${selectedProduct.price} ₴`;
+
     orderContent.innerHTML = `
       <div class="order-selected-box">
         <div class="order-row">
-          <strong>${selectedProduct.name}</strong>
-          <span>${selectedProduct.price} ₴</span>
+          <span class="order-row-title">${selectedProduct.name}</span>
+          <strong style="color:var(--primary);">${selectedProduct.price} ₴</strong>
         </div>
         <div class="order-row">
-          <span>${t("serverLabel")}</span>
+          <span style="color:var(--text-muted);">${t("serverLabel")}</span>
           <span style="text-transform: capitalize; font-weight:600; color:var(--primary);">${currentServer}</span>
         </div>
         <div class="order-row">
-          <span>${t("recipient")}</span>
-          <span>${nick || "—"}</span>
+          <span style="color:var(--text-muted);">${t("recipient")}</span>
+          <strong>${nick || "—"}</strong>
         </div>
       </div>
     `;
     submitBtn.disabled = nick.length === 0;
+
+    // Оновлення мобільного бару
+    if (mobileBar) {
+      mobileBar.classList.add("visible");
+      mProductName.innerText = `${currentServer.toUpperCase()}: ${selectedProduct.shortName}`;
+      mProductPrice.innerText = `${selectedProduct.price} ₴`;
+    }
   } else {
     totalPriceVal.innerText = "0 ₴";
-    orderContent.innerHTML = `<div class="order-empty"><span>${t("emptyHint")}</span></div>`;
+    orderContent.innerHTML = `
+      <div class="order-empty">
+        <i class="fa-solid fa-basket-shopping empty-icon"></i>
+        <span>${t("emptyOrder")}</span>
+      </div>
+    `;
     submitBtn.disabled = true;
+
+    if (mobileBar) {
+      mobileBar.classList.remove("visible");
+    }
   }
+}
+
+function onMobilePayClick() {
+  const nickInput = document.getElementById("nickname");
+  const nick = nickInput.value.trim();
+
+  if (!nick) {
+    nickInput.focus();
+    nickInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  generateLink();
 }
 
 document.getElementById("nickname").addEventListener("input", updateCheckoutSidebar);
@@ -256,18 +448,22 @@ function generateLink() {
   const nick = document.getElementById("nickname").value.trim();
   if (!nick || !selectedProduct) return;
 
-  const btn = document.getElementById("submitBtn");
-  btn.innerText = t("loading");
-  btn.disabled = true;
+  const btnText = document.getElementById("submitBtnText");
+  if (btnText) btnText.innerText = t("loading");
 
-  // ДОДАЄМО МІТКУ СЕРВЕРА В КОМЕНТАР: [grief] Товар або [survival] Товар
-  const serverTaggedMessage = `[${currentServer}] ${selectedProduct.name}`;
+  const mBtn = document.getElementById("mPayBtn");
+  if (mBtn) mBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+
+  // Формуємо коментар з міткою для бота
+  const serverComment = `[${currentServer}] ${selectedProduct.name}`;
+
+  const donatelloLang = currentLang === 'uk' ? 'ua' : (currentLang === 'pl' ? 'pl' : 'en');
 
   const params = new URLSearchParams({
     a: selectedProduct.price,
     c: nick,
-    m: serverTaggedMessage,
-    lang: currentLang === 'uk' ? 'ua' : 'en'
+    m: serverComment,
+    lang: donatelloLang
   });
 
   setTimeout(() => {
@@ -275,11 +471,16 @@ function generateLink() {
   }, 250);
 }
 
-function openLanguageModal() { document.getElementById("language-modal").classList.add("open"); }
+function openLanguageModal() {
+  document.getElementById("language-modal").classList.add("open");
+}
+
 function setLanguage(lang) {
   currentLang = lang;
+  localStorage.setItem('homeland_store_lang', lang);
   document.getElementById("language-modal").classList.remove("open");
-  document.getElementById("currentLangLabel").innerText = lang.toUpperCase();
+  
+  applyTranslations();
   renderTabs();
   renderProducts();
   updateCheckoutSidebar();
@@ -290,4 +491,6 @@ window.addEventListener("click", (e) => {
   if (e.target === modal) modal.classList.remove("open");
 });
 
+// Ініціалізація
+applyTranslations();
 switchServer('survival');
